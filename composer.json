@@ -22,12 +22,21 @@
         "phpunit/phpunit": "^5.3"
     },
     "autoload": {
+        "classmap": [
+            "src/LaravelFacebookAds"
+        ],
         "psr-4": {
-            "edbizarro\\LaravelFacebookAds\\": "src/LaravelFacebookAds/"
+            "LaravelFacebookAds\\": "src/LaravelFacebookAds/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelFacebookAds\\Test\\": "tests"
         }
     },
     "config":{
         "preferred-install": "dist"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
