@@ -1,18 +1,34 @@
 {
     "name": "edbizarro/laravel-facebook-ads",
     "type": "library",
+    "description": "Laravel package for Facebook Ads",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "facebook",
+        "ads",
+        "sdk"
+    ],
     "authors": [
         {
             "name": "Eduardo Bizarro",
             "email": "edbizarro@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
+        "php": ">=5.5.9",
         "facebook/php-ads-sdk": "^2.5"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.3"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "edbizarro\\LaravelFacebookAds\\": "src/LaravelFacebookAds/"
+        }
+    },
+    "config":{
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable"
 }
