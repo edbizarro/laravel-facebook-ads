@@ -1,0 +1,15 @@
+{
+    "name": "edbizarro/laravel-facebook-ads",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Bizarro",
+            "email": "edbizarro@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "facebook/php-ads-sdk": "^2.5"
+    }
+}
