@@ -1,0 +1,10 @@
+before_script:
+    - composer install --no-progress --prefer-dist
+php7:
+    image: php7_ultron
+    script:
+        - /usr/bin/phpdbg7.0 -qrr ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
+php5:
+    image: php5_ultron
+    script:
+        - vendor/bin/phpunit --coverage-text --colors=never --stderr
