@@ -1,13 +1,12 @@
 {
     "name": "edbizarro/laravel-facebook-ads",
     "type": "library",
-    "description": "Laravel package for Facebook Ads",
+    "description": "Facebook Ads for Laravel 5",
     "license": "MIT",
     "keywords": [
         "laravel",
         "facebook",
-        "ads",
-        "sdk"
+        "ads"
     ],
     "authors": [
         {
