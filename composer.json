@@ -16,7 +16,9 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "facebook/php-ads-sdk": "^2.5"
+        "facebook/php-ads-sdk": "^2.5",
+        "facebook/php-sdk-v4": "^5.1",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.3",
