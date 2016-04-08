@@ -3,11 +3,8 @@
 namespace LaravelFacebookAds;
 
 /**
- * Class FacebookAds
- *
- * @package LaravelFacebookAds
+ * Class FacebookAds.
  */
 class FacebookAds
 {
-
 }
