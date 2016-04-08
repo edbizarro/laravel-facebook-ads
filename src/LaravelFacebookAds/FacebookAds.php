@@ -5,11 +5,8 @@ namespace LaravelFacebookAds;
 use FacebookAds\Api;
 
 /**
- * Class FacebookAds
- *
- * @package LaravelFacebookAds
+ * Class FacebookAds.
  */
 class FacebookAds
 {
-
 }
