@@ -2,7 +2,6 @@
 
 namespace LaravelFacebookAds;
 
-use FacebookAds\Api;
 use Facebook\Facebook;
 
 /**
@@ -32,10 +31,6 @@ class FacebookAds
             'pseudo_random_string_generator' => null,
             'url_detection_handler' => null,
         ], $config);
-
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
 
         $this->fbClient = new Facebook($config);
     }
