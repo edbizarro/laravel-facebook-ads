@@ -43,11 +43,11 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(LaravelFacebookAdsContract::class, function($app){
+        $this->app->bind(LaravelFacebookAdsContract::class, function ($app) {
             return $this->createInstance($app);
         });
 
-        $this->app->singleton('facebook-ads', function($app){
+        $this->app->singleton('facebook-ads', function ($app) {
             return $this->createInstance($app);
         });
     }
