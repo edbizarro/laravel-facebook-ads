@@ -24,7 +24,8 @@
         "squizlabs/php_codesniffer": "^2.6",
         "fabpot/php-cs-fixer": "^1.11",
         "illuminate/container": "^5.2",
-        "illuminate/support": "^5.2"
+        "illuminate/support": "^5.2",
+        "sllh/php-cs-fixer-styleci-bridge": "^1.5"
     },
     "autoload": {
         "classmap": [

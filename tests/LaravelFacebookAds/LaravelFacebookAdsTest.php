@@ -9,5 +9,4 @@ use BaseTest;
  */
 class LaravelFacebookAdsTest extends BaseTest
 {
-
 }
