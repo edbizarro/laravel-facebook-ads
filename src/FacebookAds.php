@@ -2,12 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
-use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
-
 /**
  * Class FacebookAds.
  */
-class FacebookAds implements LaravelFacebookAdsContract
+class FacebookAds extends AbstractFacebookAds
 {
     /**
      * FacebookAds constructor.
