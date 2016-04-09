@@ -5,7 +5,6 @@ namespace Edbizarro\LaravelFacebookAds\Providers;
 use Illuminate\Support\ServiceProvider;
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
-use Edbizarro\LaravelFacebookAds\Facades\FacebookAds as FacebookAdsFacade;
 
 class LaravelFacebookServiceProvider extends ServiceProvider
 {

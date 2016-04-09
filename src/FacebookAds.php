@@ -16,6 +16,5 @@ class FacebookAds implements LaravelFacebookAdsContract
      */
     public function __construct(array $config = [])
     {
-
     }
 }
