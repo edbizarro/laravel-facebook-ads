@@ -29,7 +29,7 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
     public function setAccessToken($accessToken)
     {
         Api::init(config('facebook-ads.app_id'), config('facebook-ads.app_secret'), $accessToken);
-        
+
         return $this->adsApiInstance = Api::instance();
     }
 }
