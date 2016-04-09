@@ -22,7 +22,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__ . '/../../config/facebook-ads.php';
+        $configPath = __DIR__.'/../../config/facebook-ads.php';
 
         if ($this->isLumen() === false) {
             $this->publishes([$configPath => config_path('facebook-ads.php')]);

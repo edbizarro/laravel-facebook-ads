@@ -5,7 +5,7 @@ namespace Tests\LaravelFacebookAds;
 use BaseTest;
 
 /**
- * Class LaravelFacebookAdsTest
+ * Class LaravelFacebookAdsTest.
  */
 class LaravelFacebookAdsTest extends BaseTest
 {
