@@ -16,7 +16,7 @@ Laravel
 -------
 
 ### Provider
-Após a instalação de todas as dependências você precisará registrar o Laravel Facebook Ads em sua aplicação editando o arquivo ```config/aoo.php``` e adicionando a linha abaixo na seção de ```'providers'```
+Após a instalação de todas as dependências você precisará registrar o Laravel Facebook Ads em sua aplicação editando o arquivo ```config/aoo.php``` e adicionando a linha abaixo na seção de `'providers'`:
 
 ```Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider::class```
 
@@ -57,6 +57,7 @@ Este package é dividido em 'services' para facilitar o acesso as informações,
 Antes de começar a utilizar será necessário inicializar a biblioteca com um 'access_token' válido
 
 ```php
+<?php
 #controller
 
 use Edbizarro\LaravelFacebookAds\FacebookAds;
