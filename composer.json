@@ -1,0 +1,50 @@
+{
+    "name": "edbizarro/laravel-facebook-ads",
+    "type": "library",
+    "description": "Facebook Ads for Laravel 5",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "facebook",
+        "ads"
+    ],
+    "authors": [
+        {
+            "name": "Eduardo Bizarro",
+            "email": "edbizarro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "facebook/php-ads-sdk": "^2.5",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.0|^5.0",
+        "squizlabs/php_codesniffer": "^2.6",
+        "fabpot/php-cs-fixer": "^1.11",
+        "illuminate/container": "^5.2",
+        "illuminate/support": "^5.2",
+        "sllh/php-cs-fixer-styleci-bridge": "^1.5",
+        "orchestra/testbench": "^3.2",
+        "mockery/mockery": "^0.9.4"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "Edbizarro\\LaravelFacebookAds\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelFacebookAds\\Test\\": "tests/"
+        }
+    },
+    "config":{
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
