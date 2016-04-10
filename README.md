@@ -1,8 +1,7 @@
 Laravel Facebook Ads
 ====
 
-[![Latest Stable Version](http://img.shields.io/github/release/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Total Downloads](http://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Build Status](http://img.shields.io/travis/edbizarro/laravel-facebook-ads.svg)](https://travis-ci.org/edbizarro/laravel-facebook-ads)
-[![Build Status](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg)]
+[![Latest Stable Version](http://img.shields.io/github/release/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Total Downloads](http://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Build Status](http://img.shields.io/travis/edbizarro/laravel-facebook-ads.svg)](https://travis-ci.org/edbizarro/laravel-facebook-ads) [![Code Quality](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg)](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/edbizarro/laravel-facebook-ads/master/LICENSE)
 
 
 Instalação
