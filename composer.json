@@ -1,12 +1,14 @@
 {
     "name": "edbizarro/laravel-facebook-ads",
     "type": "library",
-    "description": "Facebook Ads for Laravel 5",
+    "description": "Facebook Ads for Laravel 5.*",
     "license": "MIT",
     "keywords": [
         "laravel",
         "facebook",
-        "ads"
+        "ads",
+        "sdk",
+        "php"
     ],
     "authors": [
         {
@@ -23,8 +25,6 @@
         "phpunit/phpunit": "^4.0|^5.0",
         "squizlabs/php_codesniffer": "^2.6",
         "fabpot/php-cs-fixer": "^1.11",
-        "illuminate/container": "^5.2",
-        "illuminate/support": "^5.2",
         "sllh/php-cs-fixer-styleci-bridge": "^1.5",
         "orchestra/testbench": "^3.2",
         "mockery/mockery": "^0.9.4"

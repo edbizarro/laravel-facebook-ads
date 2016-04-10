@@ -1,8 +1,7 @@
 Laravel Facebook Ads
 ====
 
-[![Latest Stable Version](http://img.shields.io/github/release/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Total Downloads](http://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Build Status](http://img.shields.io/travis/edbizarro/laravel-facebook-ads.svg)](https://travis-ci.org/edbizarro/laravel-facebook-ads)
-[![Build Status](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg)]
+[![Latest Stable Version](http://img.shields.io/github/release/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Total Downloads](http://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Build Status](http://img.shields.io/travis/edbizarro/laravel-facebook-ads.svg)](https://travis-ci.org/edbizarro/laravel-facebook-ads) [![Code Quality](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg)](https://img.shields.io/codacy/e27821fb6289410b8f58338c7e0bc686.svg) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/edbizarro/laravel-facebook-ads/master/LICENSE)
 
 
 Instalação
@@ -92,4 +91,16 @@ Este comando aceita como parametros uma lista de fields, para saber a lista comp
 
 $adAccounts = $adsApi->adAccounts();
 $adAccounts->list(['account_id', 'balance', 'name']);
+```
+
+###### getAds
+Para recuperar todos os anúncios utilize o comando ``` getAds```
+Este comando requer um 'account_id' e uma lista de fields, para saber a lista completa de fields aceitos veja: https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php
+
+```php
+<?php
+#controller
+
+$adAccounts = $adsApi->adAccounts();
+$adAccounts->getAds('act_XXXXX', ['name', 'adset_id', 'targeting']);
 ```
