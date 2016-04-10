@@ -16,7 +16,7 @@ Laravel
 -------
 
 ### Provider
-Após a instalação de todas as dependências você precisará registrar o Laravel Facebook Ads em sua aplicação editando o arquivo ```config/aoo.php``` e adicionando a linha abaixo na seção de `'providers'`:
+Após a instalação de todas as dependências você precisará registrar o Laravel Facebook Ads em sua aplicação editando o arquivo ```config/app.php``` e adicionando a linha abaixo na seção de `'providers'`:
 
 ```
 Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider::class
@@ -26,7 +26,7 @@ Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider::class
 Este package vem com uma Facade para facilitar o acesso as funções
 > Opcional: Esta etapa é opcional, este package não necessida da Facade para funcionar
 
-Edite o arquivo ```config/aoo.php``` e adicione a linha abaixo na seção ```'alias'```
+Edite o arquivo ```config/app.php``` e adicione a linha abaixo na seção ```'alias'```
 
 ```'FacebookAds' => Edbizarro\LaravelFacebookAds\Facades\FacebookAds::class```
 
@@ -72,6 +72,15 @@ public function something(FacebookAds $ads)
 
 #### AdAccounts
 
+##### Obtendo uma instância de adAccounts
+```php
+<?php
+#controller
+
+$adAccounts = $adsApi->adAccounts();
+```
+
+###### list
 Para recuperar a listagem de todas as contas de Ads que você possui utilize o comando ``` list```
 
 ```php
@@ -81,4 +90,3 @@ Para recuperar a listagem de todas as contas de Ads que você possui utilize o c
 $adAccounts = $adsApi->adAccounts();
 $adAccounts->list(['account_id', 'balance', 'name']);
 ```
-
