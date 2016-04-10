@@ -3,8 +3,8 @@
 namespace Edbizarro\LaravelFacebookAds\Services;
 
 /**
- * Class AdManagement.
+ * Class AdsInsights.
  */
-class AdsManagement
+class AdInsights
 {
 }
