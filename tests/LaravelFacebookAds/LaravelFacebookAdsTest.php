@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\LaravelFacebookAds;
+namespace LaravelFacebookAds\Tests;
 
-use BaseTest;
+use LaravelFacebookAds\Tests\BaseTest;
 use Edbizarro\LaravelFacebookAds\Contracts;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 
