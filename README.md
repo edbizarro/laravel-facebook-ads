@@ -92,3 +92,15 @@ Este comando aceita como parametros uma lista de fields, para saber a lista comp
 $adAccounts = $adsApi->adAccounts();
 $adAccounts->list(['account_id', 'balance', 'name']);
 ```
+
+###### getAds
+Para recuperar todos os anúncios utilize o comando ``` getAds```
+Este comando requer um 'account_id' e uma lista de fields, para saber a lista completa de fields aceitos veja: https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php
+
+```php
+<?php
+#controller
+
+$adAccounts = $adsApi->adAccounts();
+$adAccounts->getAds('act_XXXXX', ['name', 'adset_id', 'targeting']);
+```
