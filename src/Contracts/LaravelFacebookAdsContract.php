@@ -1,6 +1,7 @@
 <?php
 
 namespace Edbizarro\LaravelFacebookAds\Contracts;
+
 use FacebookAds\Api;
 
 /**
@@ -14,7 +15,7 @@ interface LaravelFacebookAdsContract
     public function apiInstance();
 
     /**
-     * Initialize the Facebook Ads SDK
+     * Initialize the Facebook Ads SDK.
      *
      * @param $accessToken
      * @return Api
