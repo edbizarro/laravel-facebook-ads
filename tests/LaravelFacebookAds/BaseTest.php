@@ -25,7 +25,7 @@ abstract class BaseTest extends TestCase
     /**
      * @return array
      */
-    protected function getPackageProviders()
+    protected function getPackageProviders($app)
     {
         return [LaravelFacebookServiceProvider::class];
     }
