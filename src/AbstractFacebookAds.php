@@ -4,6 +4,7 @@ namespace Edbizarro\LaravelFacebookAds;
 
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
+use Edbizarro\LaravelFacebookAds\Services\AdsManagement;
 use FacebookAds\Api;
 
 /**
@@ -34,8 +35,14 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
      */
     public function init($accessToken)
     {
-        $api = Api::init(config('facebook-ads.app_id'), config('facebook-ads.app_secret'), $accessToken);
+        $api = Api::init(
+            config('facebook-ads.app_id'),
+            config('facebook-ads.app_secret'),
+            $accessToken
+        );
         $this->adsApiInstance = $api;
         $this->adAccounts = new AdAccounts($this->adsApiInstance);
+
+        return $api;
     }
 }
