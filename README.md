@@ -82,6 +82,7 @@ $adAccounts = $adsApi->adAccounts();
 
 ###### list
 Para recuperar a listagem de todas as contas de Ads que você possui utilize o comando ``` list```
+Este comando aceita como parametros uma lista de fields, para saber a lista completa de fields aceitos veja: https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php
 
 ```php
 <?php
