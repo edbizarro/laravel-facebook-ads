@@ -4,7 +4,6 @@ namespace Edbizarro\LaravelFacebookAds;
 
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
-use Edbizarro\LaravelFacebookAds\Services\AdsManagement;
 use FacebookAds\Api;
 
 /**
