@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\LaravelFacebookAds;
+namespace LaravelFacebookAds\Tests;
 
 use Orchestra\Testbench\TestCase;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
