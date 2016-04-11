@@ -1,42 +1,39 @@
-Laravel Facebook Ads
-====
+# Laravel Facebook Ads
 
 [![Packagist](https://img.shields.io/packagist/v/edbizarro/laravel-facebook-ads.svg?maxAge=2592000)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Total Downloads](http://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Build Status](http://img.shields.io/travis/edbizarro/laravel-facebook-ads.svg)](https://travis-ci.org/edbizarro/laravel-facebook-ads) [![Codacy Badge](https://api.codacy.com/project/badge/grade/d6deeeac233847dba57afb5c07ccad4b)](https://www.codacy.com/app/edbizarro/laravel-facebook-ads) [![StyleCI](https://styleci.io/repos/55666212/shield)](https://styleci.io/repos/55666212) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/edbizarro/laravel-facebook-ads/master/LICENSE)
 
+## Usage
 
-Instalação
-------------
+Follow this steps to use this package on your Laravel installation
 
-O primeiro passo é usar o composer para instalar este package e todas as suas dependências, para isso utilizaremos o comando abaixo:
+### 1. Require it on composer
 
 ```bash
 composer require edbizarro/laravel-facebook-ads
 ```
 
-Laravel
--------
+### 2. Load service provider
 
-### Provider
-Após a instalação de todas as dependências você precisará registrar o Laravel Facebook Ads em sua aplicação editando o arquivo ```config/app.php``` e adicionando a linha abaixo na seção de `'providers'`:
+You need to update your `config/app.php` configuration file to register our service provider, adding this line on `providers` array:
 
-```
+```php
 Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider::class
 ```
 
-### Facade
-Este package vem com uma Facade para facilitar o acesso as funções
-> Opcional: Esta etapa é opcional, este package não necessida da Facade para funcionar
+### 3. Enable the facade (optional)
 
-Edite o arquivo ```config/app.php``` e adicione a linha abaixo na seção ```'alias'```
-
-```'FacebookAds' => Edbizarro\LaravelFacebookAds\Facades\FacebookAds::class```
-
-### Configuração
-
-Para publicar as configurações rode o comando ```php artisan vendor:publish```, feito isso você verá arquivo `config/facebook-ads.php`
+This package comes with an facade to make the usage easier. To enable it, add this line at `config/app.php` on `alias` array:
 
 ```php
-# config/facebook-ads.php
+'FacebookAds' => Edbizarro\LaravelFacebookAds\Facades\FacebookAds::class
+```
+
+## Configuration
+
+If you want to change any configurations, you need to publish the package configuration file. To do this, run `php artisan vendor:publish` on terminal.
+This will publish a `facebook-ads.php` file on your configuration folder like this:
+
+```php
 <?php
 return [
     'app_id' => env('FB_ADS_APP_ID'),
@@ -44,66 +41,62 @@ return [
 ];
 ```
 
-Note que que o arquivo faz uso de variáveis de ambiente, é uma boa prática deixar seus dados confidenciais em seu arquivo ```.env```, edite o arquivo ```.env``` que está na raiz do seu projeto e adicione as informações de seu APP do facebook
+Note that this file uses environment variables, it's a good practice put your secret keys on your `.env` file adding this lines on it:
+
 
 ```
-FB_ADS_APP_ID="SEU APP ID"
-FB_ADS_APP_SECRET="SEU APP SECRET"
+FB_ADS_APP_ID="YOUR_APP_ID"
+FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 ```
 
-### Usando este package
+## First steps
 
-Agora chegamos a parte divertida, vamos lá:
+Now that everything is set up, it's easy to start using!
 
-Este package é dividido em 'services' para facilitar o acesso as informações, por hora temos somente o service 'adAccounts'
+This package is slit in services to make easy to acess things. At this moment, we just have the `addAccounts` serivice.
 
-Antes de começar a utilizar será necessário inicializar a biblioteca com um 'access_token' válido
+Before using it, it's necessary to initialize the library with an valid access token.
+
 
 ```php
 <?php
-#controller
+/** Your controller */
 
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 
 ...
 
-public function something(FacebookAds $ads)
+public function yourMethod(FacebookAds $ads)
 {
     $adsApi = $ads->init($accessToken);
 }
 ...
 ```
 
-#### AdAccounts
+### adAccounts
 
-##### Obtendo uma instância de adAccounts
+To obtain an adAccounts instance:
+
 ```php
-<?php
-#controller
-
 $adAccounts = $adsApi->adAccounts();
 ```
 
-###### list
-Para recuperar a listagem de todas as contas de Ads que você possui utilize o comando ``` list```
-Este comando aceita como parametros uma lista de fields, para saber a lista completa de fields aceitos veja: https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php
+#### list
+
+Use this method to retrieve your owned Ad Accounts. This methods accepts an array as argument containing a list of fields.
+
+To obtain a list of all available fields, take a read on [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
 ```php
-<?php
-#controller
-
-$adAccounts = $adsApi->adAccounts();
 $adAccounts->list(['account_id', 'balance', 'name']);
 ```
 
-###### getAds
-Para recuperar todos os anúncios utilize o comando ``` getAds```
-Este comando requer um 'account_id' e uma lista de fields, para saber a lista completa de fields aceitos veja: https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php
+#### getAds
+
+Use this method to retrieve an account ads. This method requires an `account_id` and a list of fields to be retrieved.
+
+To obtain a list of all available fields, take a read on [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
 
 ```php
-<?php
-#controller
-
-$adAccounts = $adsApi->adAccounts();
-$adAccounts->getAds('act_XXXXX', ['name', 'adset_id', 'targeting']);
+$adAccounts->getAds('account_XXXX', ['name', 'adset_id', 'targeting']);
 ```
