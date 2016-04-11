@@ -36,6 +36,14 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
     }
 
     /**
+     * @param $adsApiInstance
+     */
+    public function setApiInstance($adsApiInstance)
+    {
+        $this->adsApiInstance = $adsApiInstance;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function init($accessToken)
@@ -48,9 +56,17 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
 
         $this->adsApiInstance = $api;
 
-        $this->adAccounts = new AdAccounts($this->adsApiInstance);
-        $this->insights = new Insights($this->adsApiInstance);
+        $this->instantiateServices();
 
         return $api;
+    }
+
+    /**
+     * Create services instances.
+     */
+    protected function instantiateServices()
+    {
+        $this->adAccounts = new AdAccounts($this->adsApiInstance);
+        $this->insights = new Insights($this->adsApiInstance);
     }
 }

@@ -9,7 +9,7 @@ use FacebookAds\Cursor;
 /**
  * Class BaseService.
  */
-class BaseService
+abstract class BaseService
 {
     /**
      * @var Api|null
