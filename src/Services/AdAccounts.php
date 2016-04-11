@@ -13,10 +13,12 @@ class AdAccounts extends BaseService
     /**
      * List all user's ads accounts.
      *
-     * @param array $fields
+     * @param array  $fields
      * @param string $userId
-     * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account
+     *
      * @return \Illuminate\Support\Collection
+     *
+     * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account
      */
     public function list($fields = [], $userId = 'me')
     {
@@ -29,8 +31,10 @@ class AdAccounts extends BaseService
     /**
      * @param $accountId
      * @param array $fields
-     * @see https://developers.facebook.com/docs/marketing-api/reference/adgroup#Reading
+     *
      * @return \Illuminate\Support\Collection
+     *
+     * @see https://developers.facebook.com/docs/marketing-api/reference/adgroup#Reading
      */
     public function getAds($accountId, $fields = [])
     {
@@ -42,6 +46,7 @@ class AdAccounts extends BaseService
 
     /**
      * @param string|int $userId
+     *
      * @return AdUser
      */
     private function getUser($userId = 'me')

@@ -18,6 +18,7 @@ interface LaravelFacebookAdsContract
      * Initialize the Facebook Ads SDK.
      *
      * @param $accessToken
+     *
      * @return Api
      */
     public function init($accessToken);

@@ -14,4 +14,12 @@ class FacebookAds extends AbstractFacebookAds
     {
         return $this->adAccounts;
     }
+
+    /**
+     * @return Services\Insights\Insights
+     */
+    public function insights()
+    {
+        return $this->insights;
+    }
 }

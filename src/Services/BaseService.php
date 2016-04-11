@@ -30,6 +30,7 @@ class BaseService
      * Transform a FacebookAds\Cursor object into a Collection.
      *
      * @param Cursor $response
+     *
      * @return Collection
      */
     public function response(Cursor $response)
