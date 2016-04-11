@@ -12,7 +12,7 @@ use FacebookAds\Object\AdAccount;
 class AdInsights extends BaseService implements InsightsContract
 {
     /**
-     * @param array  $params
+     * @param array $params
      *
      * @return \Illuminate\Support\Collection
      */

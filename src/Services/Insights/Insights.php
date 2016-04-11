@@ -2,7 +2,6 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 
-use Edbizarro\LaravelFacebookAds\Contracts\InsightsContract;
 use Edbizarro\LaravelFacebookAds\Services\BaseService;
 
 /**

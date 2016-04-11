@@ -8,9 +8,10 @@ namespace Edbizarro\LaravelFacebookAds\Contracts;
 interface InsightsContract
 {
     /**
-     * Get insights from a especified object type
+     * Get insights from a especified object type.
      *
      * @param array $params
+     *
      * @return mixed
      */
     public function getInsights($params = []);
