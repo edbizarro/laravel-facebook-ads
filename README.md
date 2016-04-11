@@ -53,7 +53,7 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 Now that everything is set up, it's easy to start using!
 
-This package is slit in services to make easy to acess things. At this moment, we just have the `addAccounts` serivice.
+This package is divided in services to make easy to acess things. At this moment, we just have the `addAccounts` service.
 
 Before using it, it's necessary to initialize the library with an valid access token.
 
@@ -85,7 +85,7 @@ $adAccounts = $adsApi->adAccounts();
 
 Use this method to retrieve your owned Ad Accounts. This methods accepts an array as argument containing a list of fields.
 
-To obtain a list of all available fields, take a read on [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
+To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
 ```php
 $adAccounts->list(['account_id', 'balance', 'name']);
@@ -95,7 +95,7 @@ $adAccounts->list(['account_id', 'balance', 'name']);
 
 Use this method to retrieve an account ads. This method requires an `account_id` and a list of fields to be retrieved.
 
-To obtain a list of all available fields, take a read on [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
+To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
 
 ```php
 $adAccounts->getAds('account_XXXX', ['name', 'adset_id', 'targeting']);
