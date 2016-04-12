@@ -4,14 +4,12 @@ namespace LaravelFacebookAds\Tests;
 
 use Edbizarro\LaravelFacebookAds\Contracts;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
-use \Mockery as m;
 
 /**
  * Class LaravelFacebookAdsTest.
  */
 class LaravelFacebookAdsTest extends BaseTest
 {
-
     /**
      * Verify if FacebookAds are in service container.
      */

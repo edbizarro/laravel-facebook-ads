@@ -5,7 +5,7 @@ namespace LaravelFacebookAds\Tests;
 use Orchestra\Testbench\TestCase;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider;
-use \Mockery as m;
+use Mockery as m;
 
 /**
  * Class BaseTest.
@@ -17,7 +17,8 @@ abstract class BaseTest extends TestCase
      */
     protected $laravelFacebookAds;
 
-    public function tearDown() {
+    public function tearDown()
+    {
         parent::tearDown();
         m::close();
     }
@@ -52,13 +53,14 @@ abstract class BaseTest extends TestCase
 
         $adAccounts
             ->shouldReceive('getAds')
-            ->with(1, array(0=>'name'))
+            ->with(1, array(0 => 'name'))
             ->andReturn('\Illuminate\Support\Collection');
 
         return $adAccounts;
     }
 
-    protected function createInsightsMock() {
+    protected function createInsightsMock()
+    {
         return $insights = m::mock('Edbizarro\LaravelFacebookAds\Services\Insights\Insights');
     }
 
