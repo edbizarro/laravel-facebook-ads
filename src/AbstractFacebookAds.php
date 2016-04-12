@@ -28,6 +28,18 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
     protected $insights;
 
     /**
+     * AbstractFacebookAds constructor.
+     *
+     * @param AdAccounts $adAccounts
+     * @param Insights   $insights
+     */
+    public function __construct(AdAccounts $adAccounts, Insights $insights)
+    {
+        $this->adAccounts = $adAccounts;
+        $this->insights = $insights;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function apiInstance()
@@ -48,25 +60,12 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
      */
     public function init($accessToken)
     {
-        $api = Api::init(
+        Api::init(
             config('facebook-ads.app_id'),
             config('facebook-ads.app_secret'),
             $accessToken
         );
 
-        $this->adsApiInstance = $api;
-
-        $this->instantiateServices();
-
-        return $api;
-    }
-
-    /**
-     * Create services instances.
-     */
-    protected function instantiateServices()
-    {
-        $this->adAccounts = new AdAccounts($this->adsApiInstance);
-        $this->insights = new Insights($this->adsApiInstance);
+        return Api::instance();
     }
 }

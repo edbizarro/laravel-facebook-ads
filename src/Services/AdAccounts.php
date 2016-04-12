@@ -51,6 +51,6 @@ class AdAccounts extends BaseService
      */
     private function getUser($userId = 'me')
     {
-        return new AdUser($userId, $this->adsApiInstance);
+        return new AdUser($userId);
     }
 }
