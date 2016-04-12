@@ -37,6 +37,20 @@ abstract class BaseTest extends TestCase
         return [LaravelFacebookServiceProvider::class];
     }
 
+    /**
+     * @return FacebookAds
+     */
+    protected function createFacebookAdsInstance()
+    {
+        return new FacebookAds(
+            $this->createAdAccountsMock(),
+            $this->createInsightsMock()
+        );
+    }
+
+    /**
+     * @return m\MockInterface
+     */
     protected function createAdAccountsMock()
     {
         $adAccounts = m::mock('Edbizarro\LaravelFacebookAds\Services\AdAccounts');
@@ -59,11 +73,17 @@ abstract class BaseTest extends TestCase
         return $adAccounts;
     }
 
+    /**
+     * @return m\MockInterface
+     */
     protected function createInsightsMock()
     {
         return $insights = m::mock('Edbizarro\LaravelFacebookAds\Services\Insights\Insights');
     }
 
+    /**
+     * @return m\MockInterface
+     */
     protected function createAdUserMock()
     {
         $adUser = m::mock('overload:FacebookAds\Object\AdUser');

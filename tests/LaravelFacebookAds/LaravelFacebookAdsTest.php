@@ -4,6 +4,7 @@ namespace LaravelFacebookAds\Tests;
 
 use Edbizarro\LaravelFacebookAds\Contracts;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
+use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
 
 /**
  * Class LaravelFacebookAdsTest.
@@ -21,31 +22,10 @@ class LaravelFacebookAdsTest extends BaseTest
         );
     }
 
-    public function test_ad_accounts_all()
+    public function test_ad_account_property_is_right()
     {
-        $adAccounts = $this->createAdAccountsMock();
+        $fb = $this->createFacebookAdsInstance();
 
-        $insights = $this->createInsightsMock();
-
-        $fb = new FacebookAds(
-            $adAccounts,
-            $insights
-        );
-        $acc = $fb->adAccounts();
-        $acc->all(['name']);
-    }
-
-    public function test_ad_accounts_get_ads()
-    {
-        $adAccounts = $this->createAdAccountsMock();
-
-        $insights = $this->createInsightsMock();
-
-        $fb = new FacebookAds(
-            $adAccounts,
-            $insights
-        );
-
-        $fb->adAccounts()->getAds(1, ['name']);
+        $this->assertInstanceOf(AdAccounts::class, $fb->adAccounts());
     }
 }
