@@ -81,14 +81,14 @@ To obtain an adAccounts instance:
 $adAccounts = $adsApi->adAccounts();
 ```
 
-#### list
+#### all
 
 Use this method to retrieve your owned Ad Accounts. This methods accepts an array as argument containing a list of fields.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
 ```php
-$adAccounts->list(['account_id', 'balance', 'name']);
+$adAccounts->all(['account_id', 'balance', 'name']);
 ```
 
 #### getAds
