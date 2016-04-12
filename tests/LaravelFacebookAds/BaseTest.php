@@ -47,8 +47,8 @@ abstract class BaseTest extends TestCase
             ->andReturn('\Illuminate\Support\Collection');
 
         $adAccounts
-            ->shouldReceive('list')
-            ->withAnyArgs()
+            ->shouldReceive('all')
+            ->with(array(0 => 'name'))
             ->andReturn('\Illuminate\Support\Collection');
 
         $adAccounts

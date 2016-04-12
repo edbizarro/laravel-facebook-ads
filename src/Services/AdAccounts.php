@@ -20,7 +20,7 @@ class AdAccounts extends BaseService
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account
      */
-    public function list($fields = [], $userId = 'me')
+    public function all($fields = [], $userId = 'me')
     {
         $user = $this->getUser($userId);
         $accounts = $user->getAdAccounts($fields);

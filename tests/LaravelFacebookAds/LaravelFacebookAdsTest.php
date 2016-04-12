@@ -21,7 +21,7 @@ class LaravelFacebookAdsTest extends BaseTest
         );
     }
 
-    public function test_ad_accounts_list()
+    public function test_ad_accounts_all()
     {
         $adAccounts = $this->createAdAccountsMock();
 
@@ -31,8 +31,8 @@ class LaravelFacebookAdsTest extends BaseTest
             $adAccounts,
             $insights
         );
-
-        $fb->adAccounts()->list(['name']);
+        $acc = $fb->adAccounts();
+        $acc->all(['name']);
     }
 
     public function test_ad_accounts_get_ads()
