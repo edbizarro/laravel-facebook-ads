@@ -53,7 +53,7 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 Now that everything is set up, it's easy to start using!
 
-This package is divided in services to make easy to acess things. At this moment, we just have the `addAccounts` and `insights` services.
+This package is divided in services to make easy to acess things. At this moment, we just have the `adAccounts` and `insights` services.
 
 Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/facebook-php-sdk-v4#usage).
 
