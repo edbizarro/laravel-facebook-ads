@@ -38,15 +38,7 @@ abstract class BaseTest extends TestCase
         $this->createSdkAdAccountMock();
         parent::setUp();
     }
-
-    /**
-     * @return array
-     */
-    protected function getPackageProviders($app)
-    {
-        return [LaravelFacebookServiceProvider::class];
-    }
-
+    
     /**
      * @return FacebookAds
      */
@@ -56,39 +48,6 @@ abstract class BaseTest extends TestCase
             (new AdAccounts()),
             (new Insights())
         );
-    }
-
-    /**
-     * @return m\MockInterface
-     */
-    protected function createAdAccountsMock()
-    {
-        $adAccounts = m::mock(
-            'Edbizarro\LaravelFacebookAds\Services\AdAccounts[response]',
-            []
-        );
-
-        $adAccounts
-            ->shouldReceive('response')
-            ->withAnyArgs()
-            ->andReturn((new Collection()));
-
-        return $adAccounts;
-    }
-
-    /**
-     * @return m\MockInterface
-     */
-    protected function createInsightsMock()
-    {
-        $insights = m::mock('Edbizarro\LaravelFacebookAds\Services\Insights\Insights[response]');
-
-        $insights
-            ->shouldReceive('response')
-            ->withAnyArgs()
-            ->andReturn((new Collection()));
-
-        return $insights;
     }
 
     protected function createSdkAdAccountMock()
