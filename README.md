@@ -53,24 +53,26 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 Now that everything is set up, it's easy to start using!
 
-This package is divided in services to make easy to acess things. At this moment, we just have the `addAccounts` service.
+This package is divided in services to make easy to acess things. At this moment, we just have the `addAccounts` and `insights` services.
 
-Before using it, it's necessary to initialize the library with an valid access token.
-
+Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/facebook-php-sdk-v4#usage).
 
 ```php
 <?php
 /** Your controller */
+namespace App\Http\Controllers;
 
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 
-...
-
-public function yourMethod(FacebookAds $ads)
+class ExampleController extends Controller
 {
-    $adsApi = $ads->init($accessToken);
+    public function __construct(FacebookAds $ads)
+    {
+        $adsApi = $ads->init($accessToken);
+        //
+    }
+    //
 }
-...
 ```
 
 ### adAccounts
@@ -100,3 +102,21 @@ To obtain a list of all available fields, look at [this](https://github.com/face
 ```php
 $adAccounts->getAds('account_XXXX', ['name', 'adset_id', 'targeting']);
 ```
+
+
+### Insights
+
+To obtain an insights instance:
+
+```php
+$insights = $adsApi->insights();
+```
+
+#### get
+
+Use this method to retrieve insights of a Campaign, AdSet, AdAccount or Ad. This methods requires an `type` which may be `ad_account`, `ad`, `ad_set` or `campaign`, a `id` and accepts an array as argument containing a list of fields.
+
+To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
+
+```php
+$insights->get('ad_account', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
