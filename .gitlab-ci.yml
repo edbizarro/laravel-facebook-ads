@@ -3,7 +3,8 @@ before_script:
 php7:
     image: edbizarro/gitlab-ci-runner-php7
     script:
-        - vendor/bin/phpunit --coverage-text --colors=never --stderr
+        - vendor/bin/phpunit --colors=never --stderr
+        - php vendor/bin/codacycoverage clover build/logs/clover.xml
 
 php5:
     image: edbizarro/gitlab-ci-runner-php5
