@@ -12,15 +12,15 @@ use FacebookAds\Object\AdAccount;
 class AdInsights extends BaseService implements InsightsContract
 {
     /**
+     * @param mixed $id
      * @param array $params
-     *
      * @return \Illuminate\Support\Collection
      */
-    public function getInsights($params = [])
+    public function getInsights($id, $params = [])
     {
         $fields = $params['fields'];
         unset($params['fields']);
-        $account = new AdAccount($params['id']);
+        $account = new AdAccount($id);
         $insights = $account->getInsights($fields, $params);
 
         return $this->response($insights);

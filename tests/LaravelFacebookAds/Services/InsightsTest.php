@@ -8,18 +8,15 @@ use Mockery as m;
 
 class InsightsTest extends BaseTest
 {
+
     public function test_get_insights_by_type()
     {
-
-        /*$adInsights = m::mock('overload:Edbizarro\LaravelFacebookAds\Services\Insights\AdInsights');
-        $adInsights->shouldReceive('response')->withAnyArgs();
-
         $fb = $this->createFacebookAdsInstance();
         $insights = $fb->insights();
         $i = $insights ->get(
             'ad_ccount',
+            'act_xxxxx',
             [
-                'id' => 'act_xxxxxxx',
                 'fields' =>
                 [
                     'name'
@@ -27,6 +24,6 @@ class InsightsTest extends BaseTest
             ]
         );
 
-        $this->assertInstanceOf(Collection::class, $i);*/
+        $this->assertInstanceOf(Collection::class, $i);
     }
 }

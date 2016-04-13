@@ -2,6 +2,8 @@
 
 namespace LaravelFacebookAds\Tests;
 
+use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
+use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
 use Illuminate\Support\Collection;
 use Orchestra\Testbench\TestCase;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
@@ -26,6 +28,12 @@ abstract class BaseTest extends TestCase
 
     public function setUp()
     {
+        $baseService = m::mock('overload:Edbizarro\LaravelFacebookAds\Services\BaseService');
+        $baseService
+            ->shouldReceive('response')
+            ->withAnyArgs()
+        ->andReturn((new Collection()));
+
         $this->createAdUserMock();
         $this->createSdkAdAccountMock();
         parent::setUp();
@@ -45,8 +53,8 @@ abstract class BaseTest extends TestCase
     protected function createFacebookAdsInstance()
     {
         return new FacebookAds(
-            $this->createAdAccountsMock(),
-            $this->createInsightsMock()
+            (new AdAccounts()),
+            (new Insights())
         );
     }
 
