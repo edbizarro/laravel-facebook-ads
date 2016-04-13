@@ -14,7 +14,7 @@ class InsightsTest extends BaseTest
         $fb = $this->createFacebookAdsInstance();
         $insights = $fb->insights();
         $i = $insights ->get(
-            'ad_ccount',
+            'ad_account',
             'act_xxxxx',
             [
                 'fields' =>
