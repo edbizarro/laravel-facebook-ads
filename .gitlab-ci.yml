@@ -1,4 +1,5 @@
 before_script:
+    - composer global require hirak/prestissimo
     - composer install --no-progress --prefer-dist
 php7:
     image: edbizarro/gitlab-ci-runner-php7
