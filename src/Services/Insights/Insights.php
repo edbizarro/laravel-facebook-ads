@@ -20,7 +20,7 @@ class Insights extends BaseService
     public function get($type, $id, $params = [])
     {
         switch ($type) {
-            case 'ad_ccount':
+            case 'ad_account':
                 return (new AdInsights())->getInsights($id, $params);
                 break;
         }
