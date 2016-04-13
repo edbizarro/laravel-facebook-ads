@@ -2,6 +2,7 @@
 
 namespace LaravelFacebookAds\Tests;
 
+use Illuminate\Support\Collection;
 use Orchestra\Testbench\TestCase;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider;
@@ -26,6 +27,7 @@ abstract class BaseTest extends TestCase
     public function setUp()
     {
         $this->createAdUserMock();
+        $this->createSdkAdAccountMock();
         parent::setUp();
     }
 
@@ -53,22 +55,15 @@ abstract class BaseTest extends TestCase
      */
     protected function createAdAccountsMock()
     {
-        $adAccounts = m::mock('Edbizarro\LaravelFacebookAds\Services\AdAccounts');
+        $adAccounts = m::mock(
+            'Edbizarro\LaravelFacebookAds\Services\AdAccounts[response]',
+            []
+        );
 
         $adAccounts
             ->shouldReceive('response')
             ->withAnyArgs()
-            ->andReturn('\Illuminate\Support\Collection');
-
-        $adAccounts
-            ->shouldReceive('all')
-            ->with(array(0 => 'name'))
-            ->andReturn('\Illuminate\Support\Collection');
-
-        $adAccounts
-            ->shouldReceive('getAds')
-            ->with(1, array(0 => 'name'))
-            ->andReturn('\Illuminate\Support\Collection');
+            ->andReturn((new Collection()));
 
         return $adAccounts;
     }
@@ -78,9 +73,29 @@ abstract class BaseTest extends TestCase
      */
     protected function createInsightsMock()
     {
-        return $insights = m::mock('Edbizarro\LaravelFacebookAds\Services\Insights\Insights');
+        $insights = m::mock('Edbizarro\LaravelFacebookAds\Services\Insights\Insights[response]');
+
+        $insights
+            ->shouldReceive('response')
+            ->withAnyArgs()
+            ->andReturn((new Collection()));
+
+        return $insights;
     }
 
+    protected function createSdkAdAccountMock()
+    {
+        $fbAdAccount = m::mock('overload:FacebookAds\Object\AdAccount');
+        $fbAdAccount
+            ->shouldReceive('getAds')
+            ->withAnyArgs();
+
+        $fbAdAccount
+            ->shouldReceive('getInsights')
+            ->withAnyArgs();
+
+        return $fbAdAccount;
+    }
     /**
      * @return m\MockInterface
      */
@@ -90,8 +105,7 @@ abstract class BaseTest extends TestCase
 
         $adUser
             ->shouldReceive('getAdAccounts')
-            ->withAnyArgs()
-            ->andReturn();
+            ->withAnyArgs();
 
         return $adUser;
     }

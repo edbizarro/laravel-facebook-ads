@@ -2,7 +2,7 @@
 
 namespace LaravelFacebookAds\Tests\Services;
 
-
+use Illuminate\Support\Collection;
 use LaravelFacebookAds\Tests\BaseTest;
 
 class AdAccountsTest extends BaseTest
@@ -11,13 +11,17 @@ class AdAccountsTest extends BaseTest
     {
         $fb = $this->createFacebookAdsInstance();
         $acc = $fb->adAccounts();
-        $acc->all(['name']);
+        $result = $acc->all(['name']);
+
+        $this->assertInstanceOf(Collection::class, $result);
     }
 
     public function test_ad_accounts_get_ads()
     {
         $fb = $this->createFacebookAdsInstance();
 
-        $fb->adAccounts()->getAds(1, ['name']);
+        $result = $fb->adAccounts()->getAds(1, ['name']);
+
+        $this->assertInstanceOf(Collection::class, $result);
     }
 }

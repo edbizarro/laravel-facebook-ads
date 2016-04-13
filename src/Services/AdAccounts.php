@@ -4,6 +4,7 @@ namespace Edbizarro\LaravelFacebookAds\Services;
 
 use FacebookAds\Object\AdAccount;
 use FacebookAds\Object\AdUser;
+use Illuminate\Support\Collection;
 
 /**
  * Class AdAccounts.
@@ -16,7 +17,7 @@ class AdAccounts extends BaseService
      * @param array  $fields
      * @param string $userId
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account
      */
@@ -32,7 +33,7 @@ class AdAccounts extends BaseService
      * @param $accountId
      * @param array $fields
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/adgroup#Reading
      */
