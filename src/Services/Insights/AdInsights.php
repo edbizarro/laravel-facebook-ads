@@ -14,6 +14,7 @@ class AdInsights extends BaseService implements InsightsContract
     /**
      * @param mixed $objectId
      * @param array $params
+     *
      * @return \Illuminate\Support\Collection
      */
     public function getInsights($objectId, $params = [])

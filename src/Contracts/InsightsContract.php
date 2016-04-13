@@ -12,6 +12,7 @@ interface InsightsContract
      *
      * @param mixed $id
      * @param array $params
+     *
      * @return mixed
      */
     public function getInsights($id, $params = []);
