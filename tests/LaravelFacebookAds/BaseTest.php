@@ -34,11 +34,12 @@ abstract class BaseTest extends TestCase
             ->withAnyArgs()
         ->andReturn((new Collection()));
 
-        $this->createAdUserMock();
+        $this->createSdkAdUserMock();
         $this->createSdkAdAccountMock();
+        $this->createSdkAdMock();
         parent::setUp();
     }
-    
+
     /**
      * @return FacebookAds
      */
@@ -48,6 +49,17 @@ abstract class BaseTest extends TestCase
             (new AdAccounts()),
             (new Insights())
         );
+    }
+
+    protected function createSdkAdMock()
+    {
+        $sdkAd = m::mock('overload:FacebookAds\Object\Ad');
+
+        $sdkAd
+            ->shouldReceive('getInsights')
+            ->withAnyArgs();
+
+        return $sdkAd;
     }
 
     protected function createSdkAdAccountMock()
@@ -66,7 +78,7 @@ abstract class BaseTest extends TestCase
     /**
      * @return m\MockInterface
      */
-    protected function createAdUserMock()
+    protected function createSdkAdUserMock()
     {
         $adUser = m::mock('overload:FacebookAds\Object\AdUser');
 

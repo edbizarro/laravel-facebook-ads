@@ -22,6 +22,10 @@ class Insights extends BaseService
     {
         switch ($objectType) {
             case 'ad_account':
+                return (new AdAccountInsights())->getInsights($objectId, $params);
+                break;
+
+            case 'ad':
                 return (new AdInsights())->getInsights($objectId, $params);
                 break;
         }
