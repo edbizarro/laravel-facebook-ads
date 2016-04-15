@@ -10,11 +10,6 @@ use FacebookAds\Api;
 interface LaravelFacebookAdsContract
 {
     /**
-     * @return \FacebookAds\Api
-     */
-    public function apiInstance();
-
-    /**
      * Initialize the Facebook Ads SDK.
      *
      * @param $accessToken

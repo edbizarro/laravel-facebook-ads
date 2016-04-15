@@ -5,7 +5,6 @@ namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 use Edbizarro\LaravelFacebookAds\Contracts\InsightsContract;
 use Edbizarro\LaravelFacebookAds\Services\BaseService;
 use FacebookAds\Object\Ad;
-use FacebookAds\Object\AdAccount;
 
 /**
  * Class AdsInsights.

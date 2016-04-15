@@ -7,7 +7,6 @@ use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
 use Illuminate\Support\Collection;
 use Orchestra\Testbench\TestCase;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
-use Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider;
 use Mockery as m;
 
 /**

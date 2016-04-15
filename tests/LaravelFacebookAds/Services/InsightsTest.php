@@ -4,7 +4,6 @@ namespace LaravelFacebookAds\Tests\Services;
 
 use Illuminate\Support\Collection;
 use LaravelFacebookAds\Tests\BaseTest;
-use Mockery as m;
 
 class InsightsTest extends BaseTest
 {
@@ -12,14 +11,13 @@ class InsightsTest extends BaseTest
     {
         $fb = $this->createFacebookAdsInstance();
         $insights = $fb->insights();
-        $i = $insights ->get(
+        $i = $insights->get(
             'ad_account',
             'act_xxxxx',
             [
-                'fields' =>
-                [
-                    'name'
-                ]
+                'fields' => [
+                    'name',
+                ],
             ]
         );
 
@@ -34,10 +32,9 @@ class InsightsTest extends BaseTest
             'ad',
             '12313123',
             [
-                'fields' =>
-                    [
-                        'start_date'
-                    ]
+                'fields' => [
+                        'start_date',
+                    ],
             ]
         );
 
@@ -52,10 +49,9 @@ class InsightsTest extends BaseTest
             'campaign',
             '12313123',
             [
-                'fields' =>
-                    [
-                        'start_date'
-                    ]
+                'fields' => [
+                        'start_date',
+                    ],
             ]
         );
 
