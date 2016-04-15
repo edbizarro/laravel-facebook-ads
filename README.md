@@ -119,4 +119,6 @@ Use this method to retrieve insights of a Campaign, AdSet, AdAccount or Ad. This
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
 
 ```php
-$insights->get('ad_account', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
+$adAccountInsights  = $insights->get('ad_account', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
+$adInsights         = $insights->get('ad', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
+$campaignInsights   = $insights->get('campaign', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
