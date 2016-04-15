@@ -1,13 +1,14 @@
 before_script:
     - composer global require hirak/prestissimo
     - composer install --no-progress --prefer-dist
+
 php7:
     image: edbizarro/gitlab-ci-runner-php7
     script:
         - vendor/bin/phpunit --coverage-text --colors=never --stderr
-        - php vendor/bin/codacycoverage clover build/logs/clover.xml
 
 php5:
     image: edbizarro/gitlab-ci-runner-php5
     script:
         - vendor/bin/phpunit --coverage-text --colors=never --stderr
+        - php vendor/bin/codacycoverage clover build/logs/clover.xml
