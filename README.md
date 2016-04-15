@@ -120,5 +120,5 @@ To obtain a list of all available fields, look at [this](https://github.com/face
 
 ```php
 $adAccountInsights  = $insights->get('ad_account', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
-$adInsights         = $insights->get('ad', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
-$campaignInsights   = $insights->get('campaign', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
+$adInsights         = $insights->get('ad', 'xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
+$campaignInsights   = $insights->get('campaign', 'xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
