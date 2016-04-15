@@ -10,10 +10,10 @@ interface InsightsContract
     /**
      * Get insights from a especified object type.
      *
-     * @param mixed $id
+     * @param mixed $objectId
      * @param array $params
      *
      * @return mixed
      */
-    public function getInsights($id, $params = []);
+    public function getInsights($objectId, $params = []);
 }
