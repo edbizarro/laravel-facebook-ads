@@ -29,6 +29,10 @@ class Insights extends BaseService
                 return (new CampaignInsights())->getInsights($objectId, $params);
                 break;
 
+            case 'ad_set':
+                return (new AdSetInsights())->getInsights($objectId, $params);
+                break;
+
             case 'ad':
                 return (new AdInsights())->getInsights($objectId, $params);
                 break;

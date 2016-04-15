@@ -57,4 +57,21 @@ class InsightsTest extends BaseTest
 
         $this->assertInstanceOf(Collection::class, $i);
     }
+
+    public function test_get_ad_set_insights()
+    {
+        $fb = $this->createFacebookAdsInstance();
+        $insights = $fb->insights();
+        $i = $insights->get(
+            'ad_set',
+            '12313123',
+            [
+                'fields' => [
+                    'id',
+                ]
+            ]
+        );
+
+        $this->assertInstanceOf(Collection::class, $i);
+    }
 }
