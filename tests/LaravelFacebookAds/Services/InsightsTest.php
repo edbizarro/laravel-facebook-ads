@@ -68,7 +68,7 @@ class InsightsTest extends BaseTest
             [
                 'fields' => [
                     'id',
-                ]
+                ],
             ]
         );
 

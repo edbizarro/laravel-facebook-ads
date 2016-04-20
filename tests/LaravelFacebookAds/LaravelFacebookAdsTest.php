@@ -6,7 +6,6 @@ use Edbizarro\LaravelFacebookAds\Contracts;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
 use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
-use FacebookAds\Api;
 use Mockery as m;
 
 /**
