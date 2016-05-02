@@ -33,8 +33,8 @@ class InsightsTest extends BaseTest
             '12313123',
             [
                 'fields' => [
-                        'start_date',
-                    ],
+                    'start_date',
+                ],
             ]
         );
 
@@ -50,8 +50,8 @@ class InsightsTest extends BaseTest
             '12313123',
             [
                 'fields' => [
-                        'start_date',
-                    ],
+                    'start_date',
+                ],
             ]
         );
 

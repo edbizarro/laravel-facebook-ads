@@ -2,14 +2,13 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 
-use Edbizarro\LaravelFacebookAds\Contracts\InsightsContract;
 use Edbizarro\LaravelFacebookAds\Services\BaseService;
 use FacebookAds\Object\Campaign;
 
 /**
  * Class CampaignInsights.
  */
-class CampaignInsights extends BaseService implements InsightsContract
+class CampaignInsights extends BaseService
 {
     /**
      * @param mixed $objectId
