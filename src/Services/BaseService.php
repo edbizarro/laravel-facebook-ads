@@ -17,7 +17,7 @@ abstract class BaseService
      *
      * @return Collection
      */
-    public function response($response)
+    public function response(Cursor $response)
     {
         $data = new Collection();
         while ($response->current()) {
