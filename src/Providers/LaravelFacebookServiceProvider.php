@@ -8,6 +8,9 @@ use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
 use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
 
+/**
+ * Class LaravelFacebookServiceProvider.
+ */
 class LaravelFacebookServiceProvider extends ServiceProvider
 {
     /**
