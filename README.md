@@ -126,3 +126,4 @@ $adSetInsights      = $insights->get('ad_set', 'xxxxxx', ['date_start', 'date_st
 $adInsights         = $insights->get('ad', 'xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
 
 $campaignInsights   = $insights->get('campaign', 'xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
+```
