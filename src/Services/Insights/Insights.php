@@ -10,7 +10,7 @@ use Edbizarro\LaravelFacebookAds\Services\BaseService;
 class Insights extends BaseService
 {
     /**
-     * Get insights from Ads, AdAccounts, Campaigns and AdSets.
+     * Get insights from Ads, AdAccounts, Campaigns or AdSets.
      *
      * @param $objectType Valid types are 'ad', 'ad_account', 'campaign', 'ad_set'
      * @param $objectId

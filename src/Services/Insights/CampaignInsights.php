@@ -21,6 +21,7 @@ class CampaignInsights extends BaseService implements InsightsContract
     {
         $fields = $params['fields'];
         unset($params['fields']);
+
         $campaign = new Campaign($objectId);
         $insights = $campaign->getInsights($fields, $params);
 

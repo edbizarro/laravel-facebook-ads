@@ -21,6 +21,7 @@ class AdAccountInsights extends BaseService implements InsightsContract
     {
         $fields = $params['fields'];
         unset($params['fields']);
+
         $account = new AdAccount($objectId);
         $insights = $account->getInsights($fields, $params);
 
