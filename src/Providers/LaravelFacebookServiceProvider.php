@@ -3,10 +3,10 @@
 namespace Edbizarro\LaravelFacebookAds\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
 use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
+use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 
 /**
  * Class LaravelFacebookServiceProvider.
@@ -44,20 +44,18 @@ class LaravelFacebookServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(LaravelFacebookAdsContract::class, function ($app) {
-            return $this->createInstance($app);
+            return $this->createInstance();
         });
 
         $this->app->singleton('facebook-ads', function ($app) {
-            return $this->createInstance($app);
+            return $this->createInstance();
         });
     }
 
     /**
-     * @param $app
-     *
      * @return FacebookAds
      */
-    protected function createInstance($app)
+    protected function createInstance()
     {
         return new FacebookAds(
             (new AdAccounts()),

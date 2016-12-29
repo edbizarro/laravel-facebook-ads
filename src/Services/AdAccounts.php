@@ -53,7 +53,7 @@ class AdAccounts extends BaseService
      *
      * @deprecated use getAccountUser instead
      */
-    private function getUser($userId = 'me')
+    protected function getUser($userId = 'me')
     {
         return new AdUser($userId);
     }
@@ -63,7 +63,7 @@ class AdAccounts extends BaseService
      *
      * @return AdAccountUser
      */
-    private function getAccountUser($accountUserId = 'me')
+    protected function getAccountUser($accountUserId = 'me')
     {
         return new AdAccountUser($accountUserId);
     }
