@@ -8,7 +8,7 @@ namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 class Insights
 {
     /**
-     * Get insights from Ads, AdAccounts, Campaigns and AdSets.
+     * Get insights from Ads, AdAccounts, Campaigns or AdSets.
      *
      * @param $objectType Valid types are 'ad', 'ad_account', 'campaign', 'ad_set'
      * @param $objectId

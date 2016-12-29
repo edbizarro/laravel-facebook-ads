@@ -20,6 +20,7 @@ class CampaignInsights extends BaseService
     {
         $fields = $params['fields'];
         unset($params['fields']);
+
         $campaign = new Campaign($objectId);
         $insights = $campaign->getInsights($fields, $params);
 
