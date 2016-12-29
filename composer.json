@@ -1,7 +1,7 @@
 {
     "name": "edbizarro/laravel-facebook-ads",
     "type": "library",
-    "description": "Facebook Ads for Laravel 5.*",
+    "description": "Facebook Ads for Laravel 5",
     "license": "MIT",
     "keywords": [
         "laravel",
@@ -19,7 +19,8 @@
     ],
     "require": {
         "php": ">=5.6",
-        "facebook/php-ads-sdk": "^2.7"
+        "facebook/php-ads-sdk": "^2.7",
+        "codacy/coverage": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.0|^5.0",

@@ -2,12 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 
-use Edbizarro\LaravelFacebookAds\Services\BaseService;
-
 /**
  * Class Insights.
  */
-class Insights extends BaseService
+class Insights
 {
     /**
      * Get insights from Ads, AdAccounts, Campaigns or AdSets.

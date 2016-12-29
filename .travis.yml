@@ -17,3 +17,6 @@ after_script:
 notifications:
     script:
         - "phpunit --process-isolation"
+        
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
