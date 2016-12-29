@@ -2,8 +2,8 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 
-use Edbizarro\LaravelFacebookAds\Services\BaseService;
 use FacebookAds\Object\Campaign;
+use Edbizarro\LaravelFacebookAds\Services\BaseService;
 
 /**
  * Class CampaignInsights.

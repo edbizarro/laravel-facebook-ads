@@ -2,9 +2,9 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services;
 
-use Edbizarro\LaravelFacebookAds\Contracts\InsightsContract;
-use Illuminate\Support\Collection;
 use FacebookAds\Cursor;
+use Illuminate\Support\Collection;
+use Edbizarro\LaravelFacebookAds\Contracts\InsightsContract;
 
 /**
  * Class BaseService.

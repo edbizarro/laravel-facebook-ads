@@ -3,10 +3,10 @@
 namespace Edbizarro\LaravelFacebookAds\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
 use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
+use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 
 /**
  * Class LaravelFacebookServiceProvider.

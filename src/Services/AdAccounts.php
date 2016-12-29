@@ -2,10 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services;
 
-use FacebookAds\Object\AdAccount;
-use FacebookAds\Object\AdAccountUser;
 use FacebookAds\Object\AdUser;
+use FacebookAds\Object\AdAccount;
 use Illuminate\Support\Collection;
+use FacebookAds\Object\AdAccountUser;
 
 /**
  * Class AdAccounts.
