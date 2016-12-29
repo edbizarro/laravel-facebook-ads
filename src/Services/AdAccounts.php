@@ -2,10 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services;
 
-use FacebookAds\Object\AdUser;
 use FacebookAds\Object\AdAccount;
-use Illuminate\Support\Collection;
 use FacebookAds\Object\AdAccountUser;
+use FacebookAds\Object\AdUser;
+use Illuminate\Support\Collection;
 
 /**
  * Class AdAccounts.
@@ -53,7 +53,7 @@ class AdAccounts extends BaseService
      *
      * @deprecated use getAccountUser instead
      */
-    private function getUser($userId = 'me')
+    protected function getUser($userId = 'me')
     {
         return new AdUser($userId);
     }
@@ -63,7 +63,7 @@ class AdAccounts extends BaseService
      *
      * @return AdAccountUser
      */
-    private function getAccountUser($accountUserId = 'me')
+    protected function getAccountUser($accountUserId = 'me')
     {
         return new AdAccountUser($accountUserId);
     }
