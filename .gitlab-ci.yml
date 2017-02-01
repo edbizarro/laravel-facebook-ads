@@ -1,6 +1,11 @@
 before_script:
     - composer global require hirak/prestissimo
-    - composer install --no-progress --prefer-dist
+    - composer install -prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+
+php7.1:
+    image: edbizarro/gitlab-ci-runner-php7.1
+    script:
+        - vendor/bin/phpunit --coverage-text --colors=never --stderr
 
 php7:
     image: edbizarro/gitlab-ci-runner-php7
