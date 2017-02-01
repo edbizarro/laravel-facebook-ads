@@ -9,7 +9,7 @@ php:
 before_script:
     - travis_retry composer self-update
     - travis_retry composer global require hirak/prestissimo
-    - travis_retry composer install -prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - travis_retry composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
 after_script:
     - php vendor/bin/codacycoverage clover build/logs/clover.xml

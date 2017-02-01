@@ -1,6 +1,6 @@
 before_script:
     - composer global require hirak/prestissimo
-    - composer install -prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
 php7.1:
     image: edbizarro/gitlab-ci-runner-php7.1
