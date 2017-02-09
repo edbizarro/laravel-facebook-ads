@@ -14,10 +14,11 @@ php7:
 
 php5:
     image: edbizarro/gitlab-ci-runner-php5
-    script:
+    before_script:
         - echo "SWAP"
         - /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
         - /sbin/mkswap /var/swap.1
         - /sbin/swapon /var/swap.1
+    script:
         - vendor/bin/phpunit --coverage-text --colors=never --stderr
         - php vendor/bin/codacycoverage clover build/logs/clover.xml
