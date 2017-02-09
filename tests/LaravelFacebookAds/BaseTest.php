@@ -104,7 +104,7 @@ abstract class BaseTest extends TestCase
      */
     protected function createSdkAdUserMock()
     {
-        $adUser = m::mock('overload:FacebookAds\Object\AdUser');
+        $adUser = m::mock('overload:FacebookAds\Object\AdAccountUser');
 
         $adUser
             ->shouldReceive('getAdAccounts')

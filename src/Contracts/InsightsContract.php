@@ -15,5 +15,5 @@ interface InsightsContract
      *
      * @return mixed
      */
-    public function getInsights($objectId, $params = []);
+    public function insights($objectId, $params = []);
 }
