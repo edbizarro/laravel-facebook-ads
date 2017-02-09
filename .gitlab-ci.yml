@@ -1,3 +1,9 @@
+cache:
+  key: $CI_BUILD_REF_NAME
+  paths:
+    - vendor/
+    - ~/.composer/cache/files/
+
 before_script:
     - composer global require hirak/prestissimo
     - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
