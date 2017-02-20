@@ -3,8 +3,8 @@
 namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 
 use FacebookAds\Object\AdAccount;
-use Edbizarro\LaravelFacebookAds\Services\BaseService;
 use Illuminate\Support\Collection;
+use Edbizarro\LaravelFacebookAds\Services\BaseService;
 
 /**
  * Class AdAccountInsights.
