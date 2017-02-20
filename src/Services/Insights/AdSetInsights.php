@@ -4,6 +4,7 @@ namespace Edbizarro\LaravelFacebookAds\Services\Insights;
 
 use FacebookAds\Object\AdSet;
 use Edbizarro\LaravelFacebookAds\Services\BaseService;
+use Illuminate\Support\Collection;
 
 /**
  * Class AdSetInsights.
@@ -11,12 +12,14 @@ use Edbizarro\LaravelFacebookAds\Services\BaseService;
 class AdSetInsights extends BaseService
 {
     /**
+     * Get insights from a especified object type.
+     *
      * @param mixed $objectId
      * @param array $params
      *
-     * @return \Illuminate\Support\Collection
+     * @return Collection
      */
-    public function getInsights($objectId, $params = [])
+    public function insights($objectId, $params = [])
     {
         $fields = $params['fields'];
         unset($params['fields']);
