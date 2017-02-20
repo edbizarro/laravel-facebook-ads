@@ -3,6 +3,8 @@
 namespace Edbizarro\LaravelFacebookAds\Services;
 
 use FacebookAds\Object\AdAccount;
+use FacebookAds\Object\Business;
+use FacebookAds\Object\BusinessAdAccountRequest;
 use FacebookAds\Object\Campaign;
 use Illuminate\Support\Collection;
 use FacebookAds\Object\AdAccountUser;
@@ -24,8 +26,8 @@ class AdAccounts extends BaseService
      */
     public function all(array $fields = [], $accountUserId = 'me')
     {
-        $user = $this->getAccountUser($accountUserId);
-        $accounts = $user->getAdAccounts($fields);
+//        $accounts = (new Business($accountUserId))->getOwnedAdAccounts($fields);
+        $accounts = $this->accountUser($accountUserId)->getAdAccounts($fields);
 
         return $this->response($accounts);
     }
@@ -40,8 +42,7 @@ class AdAccounts extends BaseService
      */
     public function ads($accountId, $fields = [])
     {
-        $account = new AdAccount($accountId);
-        $ads = $account->getAds($fields);
+        $ads = (new AdAccount($accountId))->getAds($fields);
 
         return $this->response($ads);
     }
@@ -73,12 +74,11 @@ class AdAccounts extends BaseService
     }
 
     /**
-     * @param $accountId
-     * @return Campaign
+     * @return Campaigns
      */
-    protected function campaigns($accountId)
+    public function campaigns()
     {
-        return new Campaign($accountId);
+        return new Campaigns;
     }
 
     /**

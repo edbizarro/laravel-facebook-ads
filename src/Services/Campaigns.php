@@ -13,10 +13,10 @@ use FacebookAds\Object\AdAccountUser;
 class Campaigns extends BaseService
 {
     /**
-     * List all user's ads accounts.
+     * List all campaigns.
      *
      * @param array  $fields
-     * @param string $accountUserId
+     * @param string $accountId
      *
      * @return Collection
      *
@@ -24,9 +24,9 @@ class Campaigns extends BaseService
      */
     public function all(array $fields = [], $accountId)
     {
+        $campaigns = (new AdAccount($accountId))->getCampaigns($fields);
 
-
-        return $this->response($accounts);
+        return $this->response($campaigns);
     }
 
 

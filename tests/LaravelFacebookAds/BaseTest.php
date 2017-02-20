@@ -96,6 +96,10 @@ abstract class BaseTest extends TestCase
             ->shouldReceive('getInsights')
             ->withAnyArgs();
 
+        $fbAdAccount
+            ->shouldReceive('getCampaigns')
+            ->withAnyArgs();
+
         return $fbAdAccount;
     }
 
