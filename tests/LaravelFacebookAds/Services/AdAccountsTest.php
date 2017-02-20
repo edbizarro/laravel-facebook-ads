@@ -24,4 +24,13 @@ class AdAccountsTest extends BaseTest
 
         $this->assertInstanceOf(Collection::class, $result);
     }
+
+    public function test_ad_accounts_get_campaigns()
+    {
+        $fb = $this->createFacebookAdsInstance();
+
+        $result = $fb->adAccounts()->campaigns()->all(['name'], 1);
+
+        $this->assertInstanceOf(Collection::class, $result);
+    }
 }

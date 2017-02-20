@@ -2,8 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Services;
 
-use FacebookAds\Object\AdUser;
 use FacebookAds\Object\AdAccount;
+use FacebookAds\Object\Business;
+use FacebookAds\Object\BusinessAdAccountRequest;
+use FacebookAds\Object\Campaign;
 use Illuminate\Support\Collection;
 use FacebookAds\Object\AdAccountUser;
 
@@ -16,16 +18,16 @@ class AdAccounts extends BaseService
      * List all user's ads accounts.
      *
      * @param array  $fields
-     * @param string $userId
+     * @param string $accountUserId
      *
      * @return Collection
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account
      */
-    public function all($fields = [], $userId = 'me')
+    public function all(array $fields = [], $accountUserId = 'me')
     {
-        $user = $this->getUser($userId);
-        $accounts = $user->getAdAccounts($fields);
+//        $accounts = (new Business($accountUserId))->getOwnedAdAccounts($fields);
+        $accounts = $this->accountUser($accountUserId)->getAdAccounts($fields);
 
         return $this->response($accounts);
     }
@@ -38,33 +40,55 @@ class AdAccounts extends BaseService
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/adgroup#Reading
      */
-    public function getAds($accountId, $fields = [])
+    public function ads($accountId, $fields = [])
     {
-        $account = new AdAccount($accountId);
-        $ads = $account->getAds($fields);
+        $ads = (new AdAccount($accountId))->getAds($fields);
 
         return $this->response($ads);
     }
 
     /**
-     * @param string|int $userId
-     *
-     * @return AdUser
-     *
-     * @deprecated use getAccountUser instead
+     * @deprecated use ads instead
      */
-    protected function getUser($userId = 'me')
+    public function getAds($accountId, $fields = [])
     {
-        return new AdUser($userId);
+        return $this->ads($accountId, $fields);
     }
 
     /**
-     * @param string|int $userId
+     * @param string|int $accountUserId
      *
      * @return AdAccountUser
      */
-    protected function getAccountUser($accountUserId = 'me')
+    protected function accountUser($accountUserId = 'me')
     {
         return new AdAccountUser($accountUserId);
+    }
+
+    /**
+     * @deprecated use accountUser instead
+     */
+    protected function getAccountUser($accountUserId = 'me')
+    {
+        return $this->accountUser($accountUserId);
+    }
+
+    /**
+     * @return Campaigns
+     */
+    public function campaigns()
+    {
+        return new Campaigns;
+    }
+
+    /**
+     * @param mixed $objectId
+     * @param array $params
+     *
+     * @return mixed
+     */
+    public function insights($objectId, $params = [])
+    {
+        // @TODO
     }
 }

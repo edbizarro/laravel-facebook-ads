@@ -2,7 +2,7 @@
 
 namespace Edbizarro\LaravelFacebookAds\Contracts;
 
-use FacebookAds\Api;
+use Edbizarro\LaravelFacebookAds\FacebookAds;
 
 /**
  * Interface LaravelFacebookAdsContract.
@@ -14,7 +14,7 @@ interface LaravelFacebookAdsContract
      *
      * @param $accessToken
      *
-     * @return Api
+     * @return FacebookAds
      */
     public function init($accessToken);
 }
