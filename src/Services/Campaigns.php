@@ -3,9 +3,7 @@
 namespace Edbizarro\LaravelFacebookAds\Services;
 
 use FacebookAds\Object\AdAccount;
-use FacebookAds\Object\Campaign;
 use Illuminate\Support\Collection;
-use FacebookAds\Object\AdAccountUser;
 
 /**
  * Class Campaigns.
@@ -28,7 +26,6 @@ class Campaigns extends BaseService
 
         return $this->response($campaigns);
     }
-
 
     /**
      * @param mixed $objectId
