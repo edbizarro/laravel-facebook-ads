@@ -20,7 +20,7 @@ class Campaigns extends BaseService
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account/campaigns
      */
-    public function all(array $fields = [], $accountId)
+    public function all(array $fields, $accountId)
     {
         $campaigns = (new AdAccount($accountId))->getCampaigns($fields);
 
