@@ -111,7 +111,7 @@ $adAccounts->getAds('account_XXXX', ['name', 'adset_id', 'targeting']);
 To obtain an campaign instance:
 
 ```php
-$campaigns = $adsApi->campaigns();
+$campaigns = $adAccounts->campaigns();
 ```
 
 ##### all campaigns
