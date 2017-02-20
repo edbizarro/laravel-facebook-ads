@@ -147,3 +147,13 @@ $adInsights         = $insights->get('ad', 'xxxxxx', ['date_start', 'date_stop',
 
 $campaignInsights   = $insights->get('campaign', 'xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
 ```
+
+
+TODO
+
+Ads API
+
+- [x] Read
+- [ ] Write
+- [ ] Update
+- [ ] Delete
