@@ -108,14 +108,14 @@ To obtain a list of all available fields, look at [this](https://github.com/face
 $adAccounts->all(['account_id', 'balance', 'name']);
 ```
 
-#### getAds
+#### ads
 
 Use this method to retrieve an account ads. This method requires an `account_id` and a list of fields to be retrieved.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
 
 ```php
-$adAccounts->getAds('account_XXXX', ['name', 'adset_id', 'targeting']);
+$adAccounts->ads('account_XXXX', ['name', 'adset_id', 'targeting']);
 ```
 
 #### campaign
