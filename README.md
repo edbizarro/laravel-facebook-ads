@@ -1,10 +1,12 @@
 # Laravel Facebook Ads
 
-Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook ads API
+# Laravel Facebook Ads
+
+Get ads info (campaigns, clicks, insights, cost, etc...) from Facebook ads API
 
  - Supported Facebook API version: 2.7
 
-Support for version 2.8 will be avaliable with version 1.0 of this package
+Support for version 2.8 will be available with version 1.0 of this package
 
 ---
 
@@ -66,7 +68,7 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 Now that everything is set up, it's easy to start using!
 
-This package is divided in services to make easy to acess things. At this moment, we just have the `adAccounts` and `insights` services.
+This package is divided into services to make easy to access things. At this moment, we just have the `adAccounts` and `insights` services.
 
 Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/facebook-php-sdk-v4#usage).
 
@@ -100,7 +102,7 @@ $adAccounts = $adsApi->adAccounts();
 
 #### all
 
-Use this method to retrieve your owned Ad Accounts. This methods accepts an array as argument containing a list of fields.
+Use this method to retrieve your owned Ad Accounts. This method accepts an array as argument containing a list of fields.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
@@ -128,7 +130,7 @@ $campaigns = $adsApi->campaigns();
 
 ##### all campaigns
 
-Use this method to retrieve your owned campaigns. This methods accepts an array as argument containing a list of fields.
+Use this method to retrieve your owned campaigns. This method accepts an array as argument containing a list of fields.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
 
@@ -146,7 +148,7 @@ $insights = $adsApi->insights();
 
 #### get
 
-Use this method to retrieve insights of a Campaign, AdSet, AdAccount or Ad. This methods requires an `type` which may be `ad_account`, `ad`, `ad_set` or `campaign`, a `objectId` and accepts an array as argument containing a list of fields.
+Use this method to retrieve insights of a Campaign, AdSet, AdAccount or Ad. This method requires a `type` which may be `ad_account`, `ad`, `ad_set` or `campaign`, an `objectId` and accepts an array as argument containing a list of fields.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
 
@@ -160,4 +162,4 @@ $adInsights         = $insights->get('ad', 'xxxxxx', ['date_start', 'date_stop',
 $campaignInsights   = $insights->get('campaign', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
 ```
 
-All avaliable fields
+All available fields
