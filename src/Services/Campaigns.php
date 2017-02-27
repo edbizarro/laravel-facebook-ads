@@ -26,15 +26,4 @@ class Campaigns extends BaseService
 
         return $this->response($campaigns);
     }
-
-    /**
-     * @param mixed $objectId
-     * @param array $params
-     *
-     * @return mixed
-     */
-    public function insights($objectId, $params = [])
-    {
-        // @TODO
-    }
 }

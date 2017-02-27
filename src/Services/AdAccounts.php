@@ -76,15 +76,4 @@ class AdAccounts extends BaseService
     {
         return new Campaigns;
     }
-
-    /**
-     * @param mixed $objectId
-     * @param array $params
-     *
-     * @return mixed
-     */
-    public function insights($objectId, $params = [])
-    {
-        // @TODO
-    }
 }
