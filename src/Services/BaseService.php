@@ -4,12 +4,11 @@ namespace Edbizarro\LaravelFacebookAds\Services;
 
 use FacebookAds\Cursor;
 use Illuminate\Support\Collection;
-use Edbizarro\LaravelFacebookAds\Contracts\InsightsContract;
 
 /**
  * Class BaseService.
  */
-abstract class BaseService implements InsightsContract
+abstract class BaseService
 {
     /**
      * Transform a FacebookAds\Cursor object into a Collection.
@@ -20,7 +19,7 @@ abstract class BaseService implements InsightsContract
      */
     public function response(Cursor $response)
     {
-        $data = new Collection();
+        $data = new Collection;
         while ($response->current()) {
             $data->push($response->current()->getData());
             $response->next();
