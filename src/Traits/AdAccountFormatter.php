@@ -11,21 +11,7 @@ use Edbizarro\LaravelFacebookAds\Entities\AdAccount;
  */
 trait AdAccountFormatter
 {
-    /**
-     * Transform a FacebookAds\Cursor object into a Collection.
-     *
-     * @param Cursor $response
-     *
-     * @return Collection
-     */
-    protected function format(Cursor $response)
-    {
-        $data = new Collection;
-        while ($response->current()) {
-            $data->push(new AdAccount($response->current()));
-            $response->next();
-        }
+    use Formatter;
 
-        return $data;
-    }
+    protected $entity = AdAccount::class;
 }

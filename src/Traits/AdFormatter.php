@@ -11,21 +11,7 @@ use Illuminate\Support\Collection;
  */
 trait AdFormatter
 {
-    /**
-     * Transform a FacebookAds\Cursor object into a Collection.
-     *
-     * @param Cursor $response
-     *
-     * @return Collection
-     */
-    protected function format(Cursor $response)
-    {
-        $data = new Collection;
-        while ($response->current()) {
-            $data->push(new Ad($response->current()));
-            $response->next();
-        }
+    use Formatter;
 
-        return $data;
-    }
+    protected $entity = Ad::class;
 }
