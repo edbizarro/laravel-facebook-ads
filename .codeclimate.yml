@@ -2,15 +2,15 @@ engines:
   duplication:
     enabled: true
     config:
-      languages:     
-      - php
+      languages:
+        - php
   fixme:
     enabled: true
   phpmd:
     enabled: true
 ratings:
-  paths:  
-  - "**.php"  
+  paths:
+  - "**.php"
 exclude_paths:
-- config/
-- tests/
+  - config/
+  - tests/

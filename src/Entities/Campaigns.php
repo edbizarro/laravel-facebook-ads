@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 /**
  * Class Campaigns.
  */
-class Campaigns extends BaseService
+class Campaigns
 {
     /**
      * List all campaigns.
