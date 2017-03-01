@@ -2,7 +2,6 @@
 
 namespace Edbizarro\LaravelFacebookAds\Traits;
 
-use Edbizarro\LaravelFacebookAds\Entities\Ad;
 use Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter;
 use FacebookAds\Cursor;
 use Illuminate\Support\Collection;
@@ -34,10 +33,7 @@ trait Formatter
             }
 
             return $data;
-
         } catch (Exception $e) {
-
         }
-
     }
 }

@@ -3,8 +3,6 @@
 namespace Edbizarro\LaravelFacebookAds\Traits;
 
 use Edbizarro\LaravelFacebookAds\Entities\Ad;
-use FacebookAds\Cursor;
-use Illuminate\Support\Collection;
 
 /**
  * Class AdFormatter.
