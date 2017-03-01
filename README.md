@@ -64,11 +64,9 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 ## First steps
 
-Now that everything is set up, it's easy to start using!
-
-This package is divided in services to make easy to acess things. At this moment, we just have the `adAccounts` and `insights` services.
-
 Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/facebook-php-sdk-v4#usage).
+
+#### Example getting all ads
 
 ```php
 <?php
@@ -81,83 +79,35 @@ class ExampleController extends Controller
 {
     public function __construct(FacebookAds $ads)
     {
-        $adsApi = $ads->init($accessToken);
-        //
+      $adAccounts = $ads->adAccounts();
+
+      $ads = $adAccounts->all(['name', 'id'])->map(function ($adAccount) {
+          return $adAccount->ads(
+              [
+                  'name',
+                  'account_id',
+                  'account_status',
+                  'balance',
+                  'campaign',
+                  'campaign_id',
+                  'status'
+              ]
+          );
+      });
+
+      dd($ads);
     }
-    //
 }
 ```
 
 ## Usage
 
-### adAccounts
-
-To obtain an adAccounts instance:
-
-```php
-$adAccounts = $adsApi->adAccounts();
-```
-
-#### all
-
-Use this method to retrieve your owned Ad Accounts. This methods accepts an array as argument containing a list of fields.
-
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
-
-```php
-$adAccounts->all(['account_id', 'balance', 'name']);
-```
-
-#### ads
-
-Use this method to retrieve an account ads. This method requires an `account_id` and a list of fields to be retrieved.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
 
-```php
-$adAccounts->ads('account_XXXX', ['name', 'adset_id', 'targeting']);
-```
-
-#### campaign
-
-To obtain an campaign instance:
-
-```php
-$campaigns = $adsApi->campaigns();
-```
-
-##### all campaigns
-
-Use this method to retrieve your owned campaigns. This methods accepts an array as argument containing a list of fields.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
 
-```php
-$campaigns->all(['account_id', 'status', 'name']);
-```
-
-### Insights
-
-To obtain an insights instance:
-
-```php
-$insights = $adsApi->insights();
-```
-
-#### get
-
-Use this method to retrieve insights of a Campaign, AdSet, AdAccount or Ad. This methods requires an `type` which may be `ad_account`, `ad`, `ad_set` or `campaign`, a `objectId` and accepts an array as argument containing a list of fields.
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
-
-```php
-$adAccountInsights  = $insights->get('ad_account', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
-
-$adSetInsights      = $insights->get('ad_set', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
-
-$adInsights         = $insights->get('ad', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
-
-$campaignInsights   = $insights->get('campaign', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
-```
-
-All avaliable fields
