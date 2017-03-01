@@ -1,14 +1,15 @@
 <?php
 
-namespace Edbizarro\LaravelFacebookAds\Services;
+namespace Edbizarro\LaravelFacebookAds\Traits;
 
+use Edbizarro\LaravelFacebookAds\Entities\Ad;
 use FacebookAds\Cursor;
 use Illuminate\Support\Collection;
 
 /**
- * Class BaseService.
+ * Class AdFormatter.
  */
-abstract class BaseService
+trait AdFormatter
 {
     /**
      * Transform a FacebookAds\Cursor object into a Collection.
@@ -17,11 +18,11 @@ abstract class BaseService
      *
      * @return Collection
      */
-    public function response(Cursor $response)
+    protected function format(Cursor $response)
     {
         $data = new Collection;
         while ($response->current()) {
-            $data->push($response->current()->getData());
+            $data->push(new Ad($response->current()));
             $response->next();
         }
 
