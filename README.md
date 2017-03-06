@@ -1,5 +1,7 @@
 # Laravel Facebook Ads
 
+> [Stable 1.0](https://github.com/edbizarro/laravel-facebook-ads/tree/1.0) version in progress
+
 Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook ads API
 
  - Supported Facebook API version: 2.7
