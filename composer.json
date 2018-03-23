@@ -1,11 +1,12 @@
 {
     "name": "edbizarro/laravel-facebook-ads",
     "type": "library",
-    "description": "Facebook Ads for Laravel 5.6",
+    "description": "Facebook & Instagram Ads for Laravel 5.6",
     "license": "MIT",
     "keywords": [
         "laravel",
         "facebook",
+        "instagram",
         "ads",
         "insights",
         "sdk",

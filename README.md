@@ -2,12 +2,11 @@
 
 > [Stable 1.0](https://github.com/edbizarro/laravel-facebook-ads/tree/1.0) version in progress
 
-Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook ads API
+Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Instagram ads API
 
- - Supported Facebook API version: 2.7
+* Supported Facebook API version: 2.12
 
-Support for version 2.8 will be avaliable with version 1.0
-
+> API Version <= 2.7 use version 0.8.*
 ---
 <p align="center">
 
@@ -33,7 +32,11 @@ Follow this steps to use this package on your Laravel installation
 composer require edbizarro/laravel-facebook-ads
 ```
 
-### 2. Load service provider
+The package will automatically register it's service provider.
+
+For Laravel <= 5.4 add the provider manually
+
+### 2. Load service provider (optional Laravel <= 5.4 only)
 
 You need to update your `config/app.php` configuration file to register our service provider, adding this line on `providers` array:
 
@@ -51,7 +54,7 @@ This package comes with an facade to make the usage easier. To enable it, add th
 
 ## Configuration
 
-If you want to change any configurations, you need to publish the package configuration file. To do this, run `php artisan vendor:publish` on terminal.
+If you want to change any configurations, you need to publish the package configuration file. To do this, run ` artisan vendor:publish --provider="Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider"` on terminal.
 This will publish a `facebook-ads.php` file on your configuration folder like this:
 
 ```php
@@ -72,7 +75,7 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 ## First steps
 
-Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/facebook-php-sdk-v4#usage).
+Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md).
 
 #### Example getting all ads
 
@@ -110,12 +113,10 @@ class ExampleController extends Controller
 
 ## Usage
 
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
+To obtain a list of all `AdAccount` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
+To obtain a list of all `Ad` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
 
+To obtain a list of all `Campaign` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
 
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
-
-
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
+To obtain a list of all `Ads Insights` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
