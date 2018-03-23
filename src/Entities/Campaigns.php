@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 /**
  * Class Campaigns.
  */
-class Campaigns extends BaseService
+class Campaigns
 {
     /**
      * List all campaigns.
@@ -25,16 +25,5 @@ class Campaigns extends BaseService
         $campaigns = (new AdAccount($accountId))->getCampaigns($fields);
 
         return $this->response($campaigns);
-    }
-
-    /**
-     * @param mixed $objectId
-     * @param array $params
-     *
-     * @return mixed
-     */
-    public function insights($objectId, $params = [])
-    {
-        // @TODO
     }
 }

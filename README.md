@@ -1,20 +1,23 @@
 # Laravel Facebook Ads
 
-> [Stable 1.0](https://github.com/edbizarro/laravel-facebook-ads/tree/1.0) version in progress
+Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Instagram ads API
 
+* Supported Facebook API version: 2.12
 
-Get ads info (campaigns, clicks, insights, cost, etc...) from Facebook ads API
-
- - Supported Facebook API version: 2.7
-
-Support for version 2.8 will be available with version 1.0 of this package
+> API Version <= 2.7 use version 0.8.*
 
 ---
+<p align="center">
 
 ![logo](laravel-facebook-ads.png)
+</p>
+
+<p align="center">
 
 [![Build Status](https://semaphoreci.com/api/v1/edbizarro/laravel-facebook-ads/branches/master/badge.svg)](https://semaphoreci.com/edbizarro/laravel-facebook-ads)
 [![Packagist](https://img.shields.io/packagist/v/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Code Climate](https://codeclimate.com/github/edbizarro/laravel-facebook-ads/badges/gpa.svg)](https://codeclimate.com/github/edbizarro/laravel-facebook-ads) [![Codacy Badge](https://api.codacy.com/project/badge/grade/d6deeeac233847dba57afb5c07ccad4b)](https://www.codacy.com/app/edbizarro/laravel-facebook-ads) [![StyleCI](https://styleci.io/repos/55666212/shield)](https://styleci.io/repos/55666212) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/f5001994-d22b-45a1-aa50-d4ac356cd42f/mini.png)](https://insight.sensiolabs.com/projects/f5001994-d22b-45a1-aa50-d4ac356cd42f) [![Total Downloads](http://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads)
+
+</p>
 
 ---
 
@@ -28,7 +31,11 @@ Follow this steps to use this package on your Laravel installation
 composer require edbizarro/laravel-facebook-ads
 ```
 
-### 2. Load service provider
+The package will automatically register it's service provider.
+
+For Laravel <= 5.4 add the provider manually
+
+### 2. Load service provider (optional Laravel <= 5.4 only)
 
 You need to update your `config/app.php` configuration file to register our service provider, adding this line on `providers` array:
 
@@ -46,7 +53,7 @@ This package comes with an facade to make the usage easier. To enable it, add th
 
 ## Configuration
 
-If you want to change any configurations, you need to publish the package configuration file. To do this, run `php artisan vendor:publish` on terminal.
+If you want to change any configurations, you need to publish the package configuration file. To do this, run ` artisan vendor:publish --provider="Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider"` on terminal.
 This will publish a `facebook-ads.php` file on your configuration folder like this:
 
 ```php
@@ -67,11 +74,11 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 ## First steps
 
+Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md).
+
 Now that everything is set up, it's easy to start using!
 
-This package is divided into services to make easy to access things. At this moment, we just have the `adAccounts` and `insights` services.
-
-Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/facebook-php-sdk-v4#usage).
+#### Example getting all ads
 
 ```php
 <?php
@@ -84,14 +91,30 @@ class ExampleController extends Controller
 {
     public function __construct(FacebookAds $ads)
     {
-        $adsApi = $ads->init($accessToken);
-        //
+      $adAccounts = $ads->adAccounts();
+
+      $ads = $adAccounts->all(['name', 'id'])->map(function ($adAccount) {
+          return $adAccount->ads(
+              [
+                  'name',
+                  'account_id',
+                  'account_status',
+                  'balance',
+                  'campaign',
+                  'campaign_id',
+                  'status'
+              ]
+          );
+      });
+
+      dd($ads);
     }
-    //
 }
 ```
 
 ## Usage
+
+To obtain a list of all `AdAccount` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
 ### adAccounts
 
@@ -110,57 +133,3 @@ To obtain a list of all available fields, look at [this](https://github.com/face
 ```php
 $adAccounts->all(['account_id', 'balance', 'name']);
 ```
-
-#### ads
-
-Use this method to retrieve an account ads. This method requires an `account_id` and a list of fields to be retrieved.
-
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
-
-```php
-$adAccounts->ads('account_XXXX', ['name', 'adset_id', 'targeting']);
-```
-
-#### campaign
-
-To obtain an campaign instance:
-
-```php
-$campaigns = $adsApi->campaigns();
-```
-
-##### all campaigns
-
-Use this method to retrieve your owned campaigns. This method accepts an array as argument containing a list of fields.
-
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
-
-```php
-$campaigns->all(['account_id', 'status', 'name']);
-```
-
-### Insights
-
-To obtain an insights instance:
-
-```php
-$insights = $adsApi->insights();
-```
-
-#### get
-
-Use this method to retrieve insights of a Campaign, AdSet, AdAccount or Ad. This method requires a `type` which may be `ad_account`, `ad`, `ad_set` or `campaign`, an `objectId` and accepts an array as argument containing a list of fields.
-
-To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
-
-```php
-$adAccountInsights  = $insights->get('ad_account', 'act_xxxxxx', ['date_start', 'date_stop', 'ad_name']]);
-
-$adSetInsights      = $insights->get('ad_set', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
-
-$adInsights         = $insights->get('ad', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
-
-$campaignInsights   = $insights->get('campaign', 'xxxxxx', ['date_start', 'date_stop', 'ad_name', 'clicks']]);
-```
-
-All available fields

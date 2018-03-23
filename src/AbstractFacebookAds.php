@@ -3,8 +3,6 @@
 namespace Edbizarro\LaravelFacebookAds;
 
 use FacebookAds\Api;
-use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
-use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 
 /**
@@ -16,28 +14,6 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
      * @var Api|null
      */
     protected $adsApiInstance;
-
-    /**
-     * @var AdAccounts
-     */
-    protected $adAccounts;
-
-    /**
-     * @var Insights
-     */
-    protected $insights;
-
-    /**
-     * AbstractFacebookAds constructor.
-     *
-     * @param AdAccounts $adAccounts
-     * @param Insights   $insights
-     */
-    public function __construct(AdAccounts $adAccounts, Insights $insights)
-    {
-        $this->adAccounts = $adAccounts;
-        $this->insights = $insights;
-    }
 
     /**
      * {@inheritdoc}
@@ -53,5 +29,15 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
         $this->adsApiInstance = Api::instance();
 
         return $this;
+    }
+
+    /**
+     * Get the Facebook Ads API instance.
+     *
+     * @return Api|null
+     */
+    public function getFbApiInstance()
+    {
+        return $this->adsApiInstance;
     }
 }

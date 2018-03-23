@@ -4,8 +4,6 @@ namespace Edbizarro\LaravelFacebookAds\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
-use Edbizarro\LaravelFacebookAds\Services\AdAccounts;
-use Edbizarro\LaravelFacebookAds\Services\Insights\Insights;
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 
 /**
@@ -57,10 +55,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     protected function createInstance()
     {
-        return new FacebookAds(
-            (new AdAccounts()),
-            (new Insights())
-        );
+        return new FacebookAds;
     }
 
     /**

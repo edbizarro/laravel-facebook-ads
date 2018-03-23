@@ -2,24 +2,18 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
+use Edbizarro\LaravelFacebookAds\Entities\AdAccounts;
+
 /**
  * Class FacebookAds.
  */
 class FacebookAds extends AbstractFacebookAds
 {
     /**
-     * @return Services\AdAccounts
+     * @return AdAccounts
      */
     public function adAccounts()
     {
-        return $this->adAccounts;
-    }
-
-    /**
-     * @return Services\Insights\Insights
-     */
-    public function insights()
-    {
-        return $this->insights;
+        return new AdAccounts;
     }
 }
