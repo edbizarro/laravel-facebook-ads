@@ -43,5 +43,12 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Edbizarro\\LaravelFacebookAds\\Providers\\LaravelFacebookServiceProvider"
+        ]
+      }
+    }
 }
