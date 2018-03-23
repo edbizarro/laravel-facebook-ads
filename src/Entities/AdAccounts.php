@@ -37,6 +37,6 @@ class AdAccounts
      */
     protected function accountUser($accountUserId = 'me')
     {
-        return new AdAccountUser($accountUserId);
+        return (new AdAccountUser())->setId($accountUserId);
     }
 }
