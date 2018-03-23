@@ -1,12 +1,11 @@
 # Laravel Facebook Ads
 
-> [Stable 1.0](https://github.com/edbizarro/laravel-facebook-ads/tree/1.0) version in progress
-
 Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Instagram ads API
 
 * Supported Facebook API version: 2.12
 
 > API Version <= 2.7 use version 0.8.*
+
 ---
 <p align="center">
 
@@ -77,6 +76,8 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md).
 
+Now that everything is set up, it's easy to start using!
+
 #### Example getting all ads
 
 ```php
@@ -115,8 +116,20 @@ class ExampleController extends Controller
 
 To obtain a list of all `AdAccount` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
 
-To obtain a list of all `Ad` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdFields.php).
+### adAccounts
 
-To obtain a list of all `Campaign` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
+To obtain an adAccounts instance:
 
-To obtain a list of all `Ads Insights` available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdsInsightsFields.php).
+```php
+$adAccounts = $adsApi->adAccounts();
+```
+
+#### all
+
+Use this method to retrieve your owned Ad Accounts. This method accepts an array as argument containing a list of fields.
+
+To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
+
+```php
+$adAccounts->all(['account_id', 'balance', 'name']);
+```
