@@ -2,10 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Traits;
 
-use Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter;
+use Exception;
 use FacebookAds\Cursor;
 use Illuminate\Support\Collection;
-use Exception;
+use Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter;
 
 /**
  * Class Formatter.
