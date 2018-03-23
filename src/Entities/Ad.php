@@ -23,6 +23,7 @@ class Ad extends Entity
     {
         $this->facebookAd = $facebookAd;
     }
+
     /**
      * @param $name
      * @return mixed
