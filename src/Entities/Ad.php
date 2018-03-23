@@ -17,7 +17,7 @@ class Ad extends Entity
     /**
      * AdAccount constructor.
      *
-     * @param FacebookAd $facebookAdAccount
+     * @param FacebookAd $facebookAd
      */
     public function __construct(FacebookAd $facebookAd)
     {
