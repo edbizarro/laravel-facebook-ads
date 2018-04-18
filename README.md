@@ -10,6 +10,7 @@ Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Insta
 <p align="center">
 
 ![logo](laravel-facebook-ads.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fedbizarro%2Flaravel-facebook-ads.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fedbizarro%2Flaravel-facebook-ads?ref=badge_shield)
 </p>
 
 <p align="center">
@@ -133,3 +134,7 @@ To obtain a list of all available fields, look at [this](https://github.com/face
 ```php
 $adAccounts->all(['account_id', 'balance', 'name']);
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fedbizarro%2Flaravel-facebook-ads.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fedbizarro%2Flaravel-facebook-ads?ref=badge_large)
