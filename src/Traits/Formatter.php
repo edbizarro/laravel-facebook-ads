@@ -18,8 +18,9 @@ trait Formatter
      * @param Cursor $response
      *
      * @return Collection
+     * @throws MissingEntityFormatter
      */
-    protected function format(Cursor $response)
+    protected function format(Cursor $response): ?Collection
     {
         if ($this->entity === null) {
             throw new MissingEntityFormatter('To use the FormatterTrait you must provide a entity');
