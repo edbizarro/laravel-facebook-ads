@@ -3,15 +3,16 @@
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
 use Illuminate\Support\Collection;
-use FacebookAds\Object\AdAccountUser;
 use Edbizarro\LaravelFacebookAds\Traits\AdAccountFormatter;
+use Edbizarro\LaravelFacebookAds\Traits\HasAccountUser;
 
 /**
  * Class AdAccounts.
  */
 class AdAccounts
 {
-    use AdAccountFormatter;
+    use AdAccountFormatter,
+        HasAccountUser;
 
     /**
      * List all user's ads accounts.
@@ -29,15 +30,5 @@ class AdAccounts
         $accounts = $this->accountUser($accountUserId)->getAdAccounts($fields);
 
         return $this->format($accounts);
-    }
-
-    /**
-     * @param string|int $accountUserId
-     *
-     * @return AdAccountUser
-     */
-    protected function accountUser($accountUserId = 'me'): AdAccountUser
-    {
-        return (new AdAccountUser())->setId($accountUserId);
     }
 }
