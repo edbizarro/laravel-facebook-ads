@@ -15,9 +15,7 @@ $excludes = [
     // add exclude project directory
     'vendor',
     'node_modules',
-    'storage',
     'public',
-    'docker',
     'bootstrap',
     'resources'
 ];
