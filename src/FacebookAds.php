@@ -12,7 +12,7 @@ class FacebookAds extends AbstractFacebookAds
     /**
      * @return AdAccounts
      */
-    public function adAccounts()
+    public function adAccounts(): AdAccounts
     {
         return new AdAccounts;
     }

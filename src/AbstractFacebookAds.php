@@ -11,7 +11,7 @@ use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
 {
     /**
-     * @var Api|null
+     * @var Api
      */
     protected $adsApiInstance;
 
@@ -34,9 +34,9 @@ abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
     /**
      * Get the Facebook Ads API instance.
      *
-     * @return Api|null
+     * @return Api
      */
-    public function getFbApiInstance()
+    public function getFbApiInstance(): Api
     {
         return $this->adsApiInstance;
     }
