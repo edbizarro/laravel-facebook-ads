@@ -3,8 +3,8 @@
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
 use Illuminate\Support\Collection;
-use Edbizarro\LaravelFacebookAds\Traits\AdAccountFormatter;
 use Edbizarro\LaravelFacebookAds\Traits\HasAccountUser;
+use Edbizarro\LaravelFacebookAds\Traits\AdAccountFormatter;
 
 /**
  * Class AdAccounts.
