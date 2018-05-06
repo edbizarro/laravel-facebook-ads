@@ -5,6 +5,7 @@ Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Insta
 * Supported Facebook API version: >= v3.0
 
 > API Version <= v2.7 use version 0.8.*
+
 > API Version <= v2.12 use version 0.9.*
 
 ---
