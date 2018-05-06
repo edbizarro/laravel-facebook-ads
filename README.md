@@ -89,6 +89,7 @@ Now that everything is set up, it's easy to start using!
 namespace App\Http\Controllers;
 
 use Edbizarro\LaravelFacebookAds\FacebookAds;
+use Edbizarro\LaravelFacebookAds\Facades\FacebookAds;
 
 class ExampleController extends Controller
 {
@@ -97,6 +98,24 @@ class ExampleController extends Controller
       $adAccounts = $ads->adAccounts();
 
       $ads = $adAccounts->all(['name', 'id'])->map(function ($adAccount) {
+          return $adAccount->ads(
+              [
+                  'name',
+                  'account_id',
+                  'account_status',
+                  'balance',
+                  'campaign',
+                  'campaign_id',
+                  'status'
+              ]
+          );
+      });
+
+      dd($ads);
+      
+      // Or use the facade
+      
+      $ads = FacebookAds::adAccounts()->all((['name', 'id'])->map(function ($adAccount) {
           return $adAccount->ads(
               [
                   'name',
