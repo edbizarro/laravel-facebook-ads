@@ -115,7 +115,7 @@ class ExampleController extends Controller
       
       // Or use the facade
       
-      $ads = FacebookAds::adAccounts()->all((['name', 'id'])->map(function ($adAccount) {
+      $ads = FacebookAds::adAccounts()->all(['name', 'id'])->map(function ($adAccount) {
           return $adAccount->ads(
               [
                   'name',
