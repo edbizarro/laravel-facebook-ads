@@ -5,7 +5,7 @@ namespace Edbizarro\LaravelFacebookAds\Entities;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 use Edbizarro\LaravelFacebookAds\Traits\AdFormatter;
-use FacebookAds\Object\AdAccount as FacebookAdAccount;
+use FacebookAds\Object\AdAccount as FbAdAccount;
 
 /**
  * Class AdAccount.
@@ -15,18 +15,18 @@ class AdAccount extends Entity implements Arrayable
     use AdFormatter;
 
     /**
-     * @var FacebookAdAccount
+     * @var FbAdAccount
      */
-    protected $facebookAdAccount = [];
+    protected $fbAdAccount = [];
 
     /**
      * AdAccount constructor.
      *
-     * @param FacebookAdAccount $facebookAdAccount
+     * @param FbAdAccount $facebookAdAccount
      */
-    public function __construct(FacebookAdAccount $facebookAdAccount)
+    public function __construct(FbAdAccount $facebookAdAccount)
     {
-        $this->facebookAdAccount = $facebookAdAccount;
+        $this->fbAdAccount = $facebookAdAccount;
     }
 
     /**
@@ -37,10 +37,11 @@ class AdAccount extends Entity implements Arrayable
      * @return Collection
      *
      * @see https://developers.facebook.com/docs/marketing-api/reference/adgroup#Reading
+     * @throws \Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter
      */
-    public function ads($fields = [])
+    public function ads(array $fields = []): Collection
     {
-        $ads = $this->facebookAdAccount->getAds($fields);
+        $ads = $this->fbAdAccount->getAds($fields);
 
         return $this->format($ads);
     }
@@ -51,8 +52,8 @@ class AdAccount extends Entity implements Arrayable
      */
     public function __get($name)
     {
-        if (array_key_exists($name, $this->facebookAdAccount->getData())) {
-            return $this->facebookAdAccount->getData()[$name];
+        if (array_key_exists($name, $this->fbAdAccount->getData())) {
+            return $this->fbAdAccount->getData()[$name];
         }
     }
 
@@ -63,6 +64,6 @@ class AdAccount extends Entity implements Arrayable
      */
     public function toArray(): array
     {
-        return $this->facebookAdAccount->getData();
+        return $this->FbAdAccount->getData();
     }
 }

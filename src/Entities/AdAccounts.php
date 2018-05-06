@@ -27,8 +27,8 @@ class AdAccounts
      */
     public function all(array $fields = [], $accountUserId = 'me'): Collection
     {
-        $accounts = $this->accountUser($accountUserId)->getAdAccounts($fields);
-
-        return $this->format($accounts);
+        return $this->format(
+            $this->accountUser($accountUserId)->getAdAccounts($fields)
+        );
     }
 }
