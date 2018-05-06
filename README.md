@@ -2,9 +2,10 @@
 
 Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Instagram ads API
 
-* Supported Facebook API version: 2.12
+* Supported Facebook API version: >= v3.0
 
-> API Version <= 2.7 use version 0.8.*
+> API Version <= v2.7 use version 0.8.*
+> API Version <= v2.12 use version 0.9.*
 
 ---
 <p align="center">
