@@ -2,10 +2,12 @@
 
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
+use Tightenco\Collect\Contracts\Support\Arrayable;
+
 /**
  * Class Entity.
  */
-abstract class Entity
+abstract class Entity implements Arrayable
 {
     protected $response = [];
 
@@ -25,9 +27,13 @@ abstract class Entity
      */
     public function __get($name)
     {
-        if (array_key_exists($name, $this->response->getData())) {
+        if (method_exists($this->response, 'get_data')
+            && array_key_exists($name, $this->response->getData())
+        ) {
             return $this->response->getData()[$name];
         }
+
+        return $this->response->{$name};
     }
 
     /**
@@ -37,6 +43,10 @@ abstract class Entity
      */
     public function toArray(): array
     {
-        return $this->response->getData();
+        if (method_exists($this->response, 'get_data')) {
+            return $this->response->getData();
+        }
+
+        return (array) $this->response;
     }
 }

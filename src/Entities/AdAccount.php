@@ -5,7 +5,6 @@ namespace Edbizarro\LaravelFacebookAds\Entities;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 use Edbizarro\LaravelFacebookAds\Traits\AdFormatter;
-use FacebookAds\Object\AdAccount as FbAdAccount;
 
 /**
  * Class AdAccount.
@@ -13,21 +12,6 @@ use FacebookAds\Object\AdAccount as FbAdAccount;
 class AdAccount extends Entity implements Arrayable
 {
     use AdFormatter;
-
-    /**
-     * @var FbAdAccount
-     */
-    protected $fbAdAccount = [];
-
-    /**
-     * AdAccount constructor.
-     *
-     * @param FbAdAccount $facebookAdAccount
-     */
-    public function __construct(FbAdAccount $facebookAdAccount)
-    {
-        $this->fbAdAccount = $facebookAdAccount;
-    }
 
     /**
      * Get the account ads.
@@ -41,7 +25,7 @@ class AdAccount extends Entity implements Arrayable
      */
     public function ads(array $fields = []): Collection
     {
-        $ads = $this->fbAdAccount->getAds($fields);
+        $ads = $this->response->getAds($fields);
 
         return $this->format($ads);
     }

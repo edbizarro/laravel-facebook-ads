@@ -4,6 +4,7 @@ namespace Edbizarro\LaravelFacebookAds\Traits;
 
 use Exception;
 use FacebookAds\Cursor;
+use FacebookAds\Object\AbstractObject;
 use Illuminate\Support\Collection;
 use Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter;
 
@@ -15,22 +16,31 @@ trait Formatter
     /**
      * Transform a FacebookAds\Cursor object into a Collection.
      *
-     * @param Cursor $response
+     * @param Cursor|AbstractObject $response
      *
-     * @return Collection
+     * @return Collection|AbstractObject
      * @throws MissingEntityFormatter
      */
-    protected function format(Cursor $response): Collection
+    protected function format($response)
     {
+        $data = null;
+
         if ($this->entity === null) {
             throw new MissingEntityFormatter('To use the FormatterTrait you must provide a entity');
         }
 
         try {
-            $data = new Collection;
-            while ($response->current()) {
-                $data->push(new $this->entity($response->current()));
-                $response->next();
+            switch (true) {
+                case $response instanceof Cursor:
+                    $data = new Collection;
+                    while ($response->current()) {
+                        $data->push(new $this->entity($response->current()));
+                        $response->next();
+                    }
+                    break;
+                case $response instanceof AbstractObject:
+                    $data = new $this->entity($response);
+                    break;
             }
 
             return $data;
