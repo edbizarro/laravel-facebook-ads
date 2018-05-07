@@ -157,5 +157,24 @@ $adAccounts->all(['account_id', 'balance', 'name']);
 ```
 
 
+### Campaigns
+
+To obtain an Campaigns instance:
+
+```php
+$campaigns = $adsApi->campaigns();
+```
+
+#### all
+
+Use this method to retrieve your adAccount campaigns. This method accepts an array as argument containing a list of fields and an account_id <act_xxxxxx>.
+
+To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-business-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
+
+```php
+$campaigns->all(['name'], 'act_xxxxxx');
+```
+
+
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fedbizarro%2Flaravel-facebook-ads.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fedbizarro%2Flaravel-facebook-ads?ref=badge_large)
