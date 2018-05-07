@@ -156,6 +156,16 @@ To obtain a list of all available fields, look at [this](https://github.com/face
 $adAccounts->all(['account_id', 'balance', 'name']);
 ```
 
+#### get
+
+Use this method to get details of an AdAccount. This method accepts an array as argument containing a list of fields and an account_id `act_<AD_ACCOUNT_ID>`
+
+To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-ads-sdk/blob/master/src/FacebookAds/Object/Fields/AdAccountFields.php).
+
+```php
+$adAccounts->get(['account_id', 'balance', 'name'], 'act_<AD_ACCOUNT_ID>');
+```
+
 
 ### Campaigns
 
@@ -167,12 +177,12 @@ $campaigns = $adsApi->campaigns();
 
 #### all
 
-Use this method to retrieve your adAccount campaigns. This method accepts an array as argument containing a list of fields and an account_id <act_xxxxxx>.
+Use this method to retrieve your adAccount campaigns. This method accepts an array as argument containing a list of fields and an account_id `act_<AD_ACCOUNT_ID>`
 
 To obtain a list of all available fields, look at [this](https://github.com/facebook/facebook-php-business-sdk/blob/master/src/FacebookAds/Object/Fields/CampaignFields.php).
 
 ```php
-$campaigns->all(['name'], 'act_xxxxxx');
+$campaigns->all(['name'], 'act_<AD_ACCOUNT_ID>');
 ```
 
 
