@@ -45,25 +45,4 @@ class AdAccount extends Entity implements Arrayable
 
         return $this->format($ads);
     }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        if (array_key_exists($name, $this->fbAdAccount->getData())) {
-            return $this->fbAdAccount->getData()[$name];
-        }
-    }
-
-    /**
-     * Get the instance as an array.
-     *
-     * @return array
-     */
-    public function toArray(): array
-    {
-        return $this->FbAdAccount->getData();
-    }
 }

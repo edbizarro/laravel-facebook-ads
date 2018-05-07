@@ -20,7 +20,7 @@ trait Formatter
      * @return Collection
      * @throws MissingEntityFormatter
      */
-    protected function format(Cursor $response): ?Collection
+    protected function format(Cursor $response): Collection
     {
         if ($this->entity === null) {
             throw new MissingEntityFormatter('To use the FormatterTrait you must provide a entity');
@@ -35,6 +35,7 @@ trait Formatter
 
             return $data;
         } catch (Exception $e) {
+            return collect();
         }
     }
 }
