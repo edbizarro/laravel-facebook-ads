@@ -2,8 +2,8 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
-use Edbizarro\LaravelFacebookAds\Entities\AdAccounts;
 use Edbizarro\LaravelFacebookAds\Entities\Campaigns;
+use Edbizarro\LaravelFacebookAds\Entities\AdAccounts;
 
 class FacebookAds extends AbstractFacebookAds
 {

@@ -2,10 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
+use FacebookAds\Object\AdAccount;
 use Illuminate\Support\Collection;
 use Edbizarro\LaravelFacebookAds\Traits\HasAccountUser;
 use Edbizarro\LaravelFacebookAds\Traits\AdAccountFormatter;
-use FacebookAds\Object\AdAccount;
 
 /**
  * Class AdAccounts.
@@ -41,7 +41,7 @@ class AdAccounts
      * @throws \Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter
      * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account
      */
-    public function get(array $fields = [], $accountId)
+    public function get(array $fields, $accountId)
     {
         return $this->format(
             (new AdAccount($accountId))->read($fields)

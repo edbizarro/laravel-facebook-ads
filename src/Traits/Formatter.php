@@ -4,8 +4,8 @@ namespace Edbizarro\LaravelFacebookAds\Traits;
 
 use Exception;
 use FacebookAds\Cursor;
-use FacebookAds\Object\AbstractObject;
 use Illuminate\Support\Collection;
+use FacebookAds\Object\AbstractObject;
 use Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter;
 
 /**
