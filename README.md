@@ -77,7 +77,8 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 ## First steps
 
-Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md).
+Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md) with: `FacebookAds::init($accessToken);`
+
 
 Now that everything is set up, it's easy to start using!
 
