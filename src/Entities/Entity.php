@@ -2,7 +2,7 @@
 
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
-use Tightenco\Collect\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class Entity.
