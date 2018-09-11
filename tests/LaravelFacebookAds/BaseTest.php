@@ -3,7 +3,6 @@
 namespace LaravelFacebookAds\Tests;
 
 use Edbizarro\LaravelFacebookAds\Facades\FacebookAds;
-use Edbizarro\LaravelFacebookAds\Period;
 use Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider;
 use Orchestra\Testbench\TestCase;
 use Mockery as m;

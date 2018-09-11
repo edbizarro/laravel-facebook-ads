@@ -2,7 +2,6 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
-
 use FacebookAds\Object\Ad;
 use FacebookAds\Object\AdAccount;
 use FacebookAds\Object\AdSet;
