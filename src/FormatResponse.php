@@ -13,7 +13,6 @@ trait FormatResponse
     {
         $data = null;
 
-//        dd($response->getArrayCopy());
         try {
             switch (true) {
                 case $response instanceof Cursor:
