@@ -7,7 +7,7 @@ use Illuminate\Contracts\Support\Arrayable;
 /**
  * Class Entity.
  */
-abstract class Entity implements Arrayable
+abstract class AbstractEntity implements Arrayable
 {
     protected $response = [];
 

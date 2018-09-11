@@ -7,7 +7,7 @@ use Edbizarro\LaravelFacebookAds\Traits\AdFormatter;
 /**
  * Class Ad.
  */
-class Ad extends Entity
+class Ad extends AbstractEntity
 {
     use AdFormatter;
 }
