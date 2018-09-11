@@ -3,8 +3,8 @@
 namespace Edbizarro\LaravelFacebookAds;
 
 use FacebookAds\Cursor;
-use FacebookAds\Object\AbstractObject;
 use Illuminate\Support\Collection;
+use FacebookAds\Object\AbstractObject;
 
 trait FormatResponse
 {
