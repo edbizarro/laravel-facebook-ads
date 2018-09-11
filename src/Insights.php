@@ -3,9 +3,9 @@
 namespace Edbizarro\LaravelFacebookAds;
 
 use FacebookAds\Object\Ad;
-use FacebookAds\Object\AdAccount;
 use FacebookAds\Object\AdSet;
 use FacebookAds\Object\Campaign;
+use FacebookAds\Object\AdAccount;
 
 class Insights
 {
