@@ -2,3 +2,4 @@
 .bundle
 composer.lock
 /build/
+phpunit.test.xml
