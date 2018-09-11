@@ -9,7 +9,7 @@ use Edbizarro\LaravelFacebookAds\Traits\AdFormatter;
 /**
  * Class AdAccount.
  */
-class AdAccount extends Entity implements Arrayable
+class AdAccount extends AbstractEntity implements Arrayable
 {
     use AdFormatter;
 

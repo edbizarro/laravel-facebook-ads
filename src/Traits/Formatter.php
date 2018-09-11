@@ -14,7 +14,7 @@ use Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter;
 trait Formatter
 {
     /**
-     * Transform a FacebookAds\Cursor object into a Collection.
+     * ProcessTransform a FacebookAds\Cursor object into a Collection.
      *
      * @param Cursor|AbstractObject $response
      *
