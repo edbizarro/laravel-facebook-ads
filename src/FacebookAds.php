@@ -2,14 +2,13 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
+use Illuminate\Support\Traits\Macroable;
 use Edbizarro\LaravelFacebookAds\Entities\Campaigns;
 use Edbizarro\LaravelFacebookAds\Entities\AdAccounts;
-use Illuminate\Support\Traits\Macroable;
 
 class FacebookAds extends AbstractFacebookAds
 {
     use Macroable;
-
 
     /**
      * @param Period $period
