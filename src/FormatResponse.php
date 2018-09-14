@@ -12,23 +12,19 @@ trait FormatResponse
     {
         $data = new Collection;
 
-        try {
-            switch (true) {
-                case $response instanceof Cursor:
-                    foreach ($response->getLastResponse()->getContent() as $items) {
-                        foreach ($items as $item) {
-                            $data->push($item);
-                        }
+        switch (true) {
+            case $response instanceof Cursor:
+                foreach ($response->getLastResponse()->getContent() as $items) {
+                    foreach ($items as $item) {
+                        $data->push($item);
                     }
-                    break;
-                case $response instanceof AbstractObject:
-                    $data->push($response->getLastResponse()->getContent());
-                    break;
-            }
-
-            return $data;
-        } catch (Exception $e) {
-            return collect();
+                }
+                break;
+            case $response instanceof AbstractObject:
+                $data->push($response->getLastResponse()->getContent());
+                break;
         }
+
+        return $data;
     }
 }
