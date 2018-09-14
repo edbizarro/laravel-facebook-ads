@@ -21,7 +21,6 @@ class Insights
         $levelClass = $this->selectClassByLevel($level, $accountId);
 
         $fields = $params['fields'];
-//        unset($params['fields']);
 
         $params['time_increment'] = '1';
         $params['level'] = $level;
