@@ -3,15 +3,25 @@
 namespace LaravelFacebookAds\Tests;
 
 use Edbizarro\LaravelFacebookAds\Facades\FacebookAds;
+use FacebookAds\Logger\CurlLogger;
+use Edbizarro\LaravelFacebookAds\Period;
 use Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider;
+use FacebookAds\Object\AdsInsights;
+use FacebookAds\Object\Fields\AdsInsightsFields;
+use FacebookAds\Object\Values\AdsInsightsLevelValues;
 use Orchestra\Testbench\TestCase;
 use Mockery as m;
 
 /**
  * Class BaseTest.
  */
-abstract class BaseTest extends TestCase
+class BaseTest extends TestCase
 {
+    public function test_test()
+    {
+
+    }
+
     public function tearDown()
     {
         parent::tearDown();
@@ -21,8 +31,6 @@ abstract class BaseTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-
-        FacebookAds::init(env('FB_ACCESS_TOKEN'));
     }
 
     protected function getPackageProviders($app)
