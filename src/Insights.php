@@ -6,6 +6,7 @@ use FacebookAds\Object\Ad;
 use FacebookAds\Object\AdSet;
 use FacebookAds\Object\Campaign;
 use FacebookAds\Object\AdAccount;
+use FacebookAds\Object\Values\AdsInsightsLevelValues;
 
 class Insights
 {
@@ -20,8 +21,10 @@ class Insights
         $levelClass = $this->selectClassByLevel($level, $accountId);
 
         $fields = $params['fields'];
-        unset($params['fields']);
+//        unset($params['fields']);
 
+        $params['time_increment'] = '1';
+        $params['level'] = $level;
         $params['time_range'] = [
             'since' => $period->startDate->format('Y-m-d'),
             'until' => $period->endDate->format('Y-m-d'),
@@ -39,17 +42,17 @@ class Insights
     protected function selectClassByLevel(string $level, string $accountId)
     {
         switch ($level) {
-            case 'ad':
-                return new Ad($accountId);
+            case AdsInsightsLevelValues::AD:
+                return (new Ad)->setId($accountId);
                 break;
-            case 'campaign':
-                return new Campaign($accountId);
+            case AdsInsightsLevelValues::CAMPAIGN:
+                return (new Campaign)->setId($accountId);
                 break;
-            case 'adset':
-                return new AdSet($accountId);
+            case AdsInsightsLevelValues::ADSET:
+                return (new AdSet)->setId($accountId);
                 break;
-            case 'account':
-                return new AdAccount($accountId);
+            case AdsInsightsLevelValues::ACCOUNT:
+                return (new AdAccount)->setId($accountId);
                 break;
         }
     }

@@ -10,19 +10,19 @@ trait FormatResponse
 {
     protected function format(Cursor $response)
     {
-        $data = null;
+        $data = new Collection;
 
         try {
             switch (true) {
                 case $response instanceof Cursor:
-                    $data = new Collection;
-
-                    foreach ($response->getLastResponse()->getContent() as $item) {
-                        $data->push($item);
+                    foreach ($response->getLastResponse()->getContent() as $items) {
+                        foreach ($items as $item) {
+                            $data->push($item);
+                        }
                     }
                     break;
                 case $response instanceof AbstractObject:
-                    $data = $response->getLastResponse()->getContent();
+                    $data->push($response->getLastResponse()->getContent());
                     break;
             }
 

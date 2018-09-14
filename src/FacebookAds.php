@@ -17,6 +17,8 @@ class FacebookAds extends AbstractFacebookAds
      * @param array $params
      *
      * @see https://developers.facebook.com/docs/marketing-api/insights
+     *
+     * @return \Illuminate\Support\Collection
      */
     public function insights(
         Period $period,
