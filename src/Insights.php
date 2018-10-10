@@ -23,22 +23,16 @@ class Insights
         $fields = $params['fields'];
 
         $params['time_increment'] = '1';
+        $params['limit'] = $params['limit'] ?? 100;
         $params['level'] = $level;
         $params['time_range'] = [
             'since' => $period->startDate->format('Y-m-d'),
             'until' => $period->endDate->format('Y-m-d'),
         ];
 
-        $response = [];
         $apiResponse = $levelClass->getInsights($fields, $params);
 
-        $response[] = $apiResponse;
-
-        while ($apiResponse->getNext()) {
-            $response[] = $apiResponse->fetchAfter();
-        }
-
-        return $this->format($response);
+        return $this->format($apiResponse);
     }
 
     /**
