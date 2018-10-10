@@ -29,7 +29,16 @@ class Insights
             'until' => $period->endDate->format('Y-m-d'),
         ];
 
-        return $this->format($levelClass->getInsights($fields, $params));
+        $response = [];
+        $apiResponse = $levelClass->getInsights($fields, $params);
+
+        $response[] = $apiResponse;
+
+        while ($apiResponse->getNext()) {
+            $response[] = $apiResponse->fetchAfter();
+        }
+
+        return $this->format($response);
     }
 
     /**

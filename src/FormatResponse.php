@@ -13,6 +13,15 @@ trait FormatResponse
         $data = new Collection;
 
         switch (true) {
+            case is_array($response):
+                foreach ($response as $responseObject) {
+                    foreach ($responseObject->getLastResponse()->getContent() as $items) {
+                        foreach ($items as $item) {
+                            $data->push($item);
+                        }
+                    }
+                }
+                break;
             case $response instanceof Cursor:
                 foreach ($response->getLastResponse()->getContent() as $items) {
                     foreach ($items as $item) {
