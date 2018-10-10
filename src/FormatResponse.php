@@ -8,7 +8,7 @@ use FacebookAds\Object\AbstractObject;
 
 trait FormatResponse
 {
-    protected function format(Cursor $response)
+    protected function format($response)
     {
         $data = new Collection;
 
