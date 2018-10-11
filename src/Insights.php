@@ -22,7 +22,7 @@ class Insights
 
         $fields = $params['fields'];
 
-        $params['time_increment'] = '1';
+        $params['time_increment'] = $params['time_increment'] ?? '1';
         $params['limit'] = $params['limit'] ?? 100;
         $params['level'] = $level;
         $params['time_range'] = [
