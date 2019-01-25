@@ -14,10 +14,7 @@ $rules = [
 $excludes = [
     // add exclude project directory
     'vendor',
-    'node_modules',
-    'public',
-    'bootstrap',
-    'resources'
+    'build',
 ];
 return PhpCsFixer\Config::create()
     ->setRules($rules)
