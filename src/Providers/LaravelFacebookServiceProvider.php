@@ -12,13 +12,6 @@ use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 class LaravelFacebookServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
      * Bootstrap the application services.
      */
     public function boot()
@@ -26,7 +19,9 @@ class LaravelFacebookServiceProvider extends ServiceProvider
         $configPath = __DIR__.'/../../config/facebook-ads.php';
 
         if ($this->isLumen() === false) {
-            $this->publishes([$configPath => config_path('facebook-ads.php')]);
+            $this->publishes([
+                $configPath => config_path('facebook-ads.php')
+            ], 'facebook-ads');
         }
 
         if ($this->isLumen()) {
