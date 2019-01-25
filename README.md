@@ -67,7 +67,7 @@ return [
 ];
 ```
 
-Note that this file uses environment variables, it's a good practice put your secret keys on your `.env` file adding this lines on it:
+> Note that this file uses environment variables, it's a good practice put your secret keys on your `.env` file adding this lines on it:
 
 
 ```
@@ -77,8 +77,11 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 ## First steps
 
-Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md) with: `FacebookAds::init($accessToken);`
+Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md) with: 
 
+```php
+FacebookAds::init($accessToken);
+```
 
 Now that everything is set up, it's easy to start using!
 
@@ -98,8 +101,6 @@ $ads = FacebookAds::adAccounts()->all()->map(function ($adAccount) {
       ]
   );
 });
-
-dd($ads);
 ```
 
 ## Usage

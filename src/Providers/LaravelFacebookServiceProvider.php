@@ -32,7 +32,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
             __DIR__.'/../../config/facebook-ads.php',
             'facebook-ads'
         );
-        
+
         $this->app->bind(LaravelFacebookAdsContract::class, function ($app) {
             return $this->createInstance();
         });
