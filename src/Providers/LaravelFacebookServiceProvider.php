@@ -33,11 +33,11 @@ class LaravelFacebookServiceProvider extends ServiceProvider
             'facebook-ads'
         );
 
-        $this->app->bind(LaravelFacebookAdsContract::class, function ($app) {
+        $this->app->bind(LaravelFacebookAdsContract::class, function () {
             return $this->createInstance();
         });
 
-        $this->app->singleton('facebook-ads', function ($app) {
+        $this->app->singleton('facebook-ads', function () {
             return $this->createInstance();
         });
     }
@@ -46,7 +46,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
     {
         if ($this->isLumen() === false) {
             $this->publishes([
-                $configPath => config_path('facebook-ads.php')
+                __DIR__.'/../../config/facebook-ads.php' => config_path('facebook-ads.php')
             ], 'facebook-ads');
         }
 
