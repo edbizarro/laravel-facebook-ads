@@ -16,19 +16,11 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__.'/../../config/facebook-ads.php';
-
-        if ($this->isLumen() === false) {
-            $this->publishes([
-                $configPath => config_path('facebook-ads.php')
-            ], 'facebook-ads');
-        }
+        $this->registerPublishing();
 
         if ($this->isLumen()) {
             $this->app->configure('facebook-ads');
         }
-
-        $this->mergeConfigFrom($configPath, 'facebook-ads');
     }
 
     /**
@@ -36,6 +28,11 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/facebook-ads.php',
+            'facebook-ads'
+        );
+        
         $this->app->bind(LaravelFacebookAdsContract::class, function ($app) {
             return $this->createInstance();
         });
@@ -43,6 +40,21 @@ class LaravelFacebookServiceProvider extends ServiceProvider
         $this->app->singleton('facebook-ads', function ($app) {
             return $this->createInstance();
         });
+    }
+
+    protected function registerPublishing(): void
+    {
+        if ($this->isLumen() === false) {
+            $this->publishes([
+                $configPath => config_path('facebook-ads.php')
+            ], 'facebook-ads');
+        }
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../../config/facebook-ads.php' => config_path('facebook-ads.php'),
+            ], 'facebook-ads');
+        }
     }
 
     /**
