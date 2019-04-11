@@ -2,8 +2,8 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
-use FacebookAds\Api;
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
+use FacebookAds\Api;
 
 /**
  * Class AbstractFacebookAds.

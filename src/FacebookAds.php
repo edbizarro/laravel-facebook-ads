@@ -2,9 +2,9 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
-use Illuminate\Support\Traits\Macroable;
-use Edbizarro\LaravelFacebookAds\Entities\Campaigns;
 use Edbizarro\LaravelFacebookAds\Entities\AdAccounts;
+use Edbizarro\LaravelFacebookAds\Entities\Campaigns;
+use Illuminate\Support\Traits\Macroable;
 
 class FacebookAds extends AbstractFacebookAds
 {
