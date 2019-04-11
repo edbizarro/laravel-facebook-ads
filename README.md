@@ -1,23 +1,20 @@
-# Laravel Facebook Ads
-
-Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Instagram ads API
-
-* Supported Facebook API version: >= v3.0
-
-> API Version <= v2.7 use version 0.8.*
-
-> API Version >= v2.8 use version 0.11.*
-
----
 <p align="center">
 
 ![logo](laravel-facebook-ads.png)
 
 </p>
 
+# Laravel Facebook Ads
+
+Get ads infos (campaigns, ads, insights, etc...) from Facebook & Instagram Ads API
+
+* Supported Facebook API version: >= v3.0
+
+---
+
+
 <p align="center">
 
-[![Build Status](https://semaphoreci.com/api/v1/edbizarro/laravel-facebook-ads/branches/master/badge.svg)](https://semaphoreci.com/edbizarro/laravel-facebook-ads)
 [![Packagist](https://img.shields.io/packagist/v/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Code Climate](https://codeclimate.com/github/edbizarro/laravel-facebook-ads/badges/gpa.svg)](https://codeclimate.com/github/edbizarro/laravel-facebook-ads) [![Codacy Badge](https://api.codacy.com/project/badge/grade/d6deeeac233847dba57afb5c07ccad4b)](https://www.codacy.com/app/edbizarro/laravel-facebook-ads) [![StyleCI](https://styleci.io/repos/55666212/shield)](https://styleci.io/repos/55666212) ![Packagist](https://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)
 
 </p>
@@ -28,7 +25,7 @@ Get ads infos (campaigns, clicks, insights, cost , etc...) from Facebook & Insta
 
 Follow this steps to use this package on your Laravel installation
 
-### 1. Require it on composer
+### Installing with composer
 
 ```bash
 composer require edbizarro/laravel-facebook-ads
@@ -38,7 +35,7 @@ The package will automatically register it's service provider.
 
 For Laravel <= 5.4 add the provider manually
 
-### 2. Load service provider (optional Laravel <= 5.4 only)
+### Load service provider (optional Laravel <= 5.4 only)
 
 You need to update your `config/app.php` configuration file to register our service provider, adding this line on `providers` array:
 
@@ -46,7 +43,7 @@ You need to update your `config/app.php` configuration file to register our serv
 Edbizarro\LaravelFacebookAds\Providers\LaravelFacebookServiceProvider::class
 ```
 
-### 3. Enable the facade (optional)
+### Enable the facade (optional)
 
 This package comes with an facade to make the usage easier. To enable it, add this line at `config/app.php` on `alias` array:
 
