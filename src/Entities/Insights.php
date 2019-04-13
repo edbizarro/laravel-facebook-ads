@@ -2,9 +2,9 @@
 
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
-use Edbizarro\LaravelFacebookAds\Traits\Formatter;
 use FacebookAds\Object\AdAccount;
 use Illuminate\Support\Collection;
+use Edbizarro\LaravelFacebookAds\Traits\Formatter;
 
 /**
  * Class Campaigns.
