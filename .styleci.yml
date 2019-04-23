@@ -1,6 +1,8 @@
-preset: laravel
+preset: psr2
+risky: true
 finder:
   exclude:
-    - "tests"
-  name:
-    - "*.php"
+    - build
+    - public
+    - tests
+  name: "*.php"
