@@ -15,7 +15,7 @@ Get ads infos (campaigns, ads, insights, etc...) from Facebook & Instagram Ads A
 
 <p align="center">
 
-[![Packagist](https://img.shields.io/packagist/v/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Code Climate](https://codeclimate.com/github/edbizarro/laravel-facebook-ads/badges/gpa.svg)](https://codeclimate.com/github/edbizarro/laravel-facebook-ads) [![Codacy Badge](https://api.codacy.com/project/badge/grade/d6deeeac233847dba57afb5c07ccad4b)](https://www.codacy.com/app/edbizarro/laravel-facebook-ads) [![StyleCI](https://styleci.io/repos/55666212/shield)](https://styleci.io/repos/55666212) ![Packagist](https://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)
+[![Packagist](https://img.shields.io/packagist/v/edbizarro/laravel-facebook-ads.svg)](https://packagist.org/packages/edbizarro/laravel-facebook-ads) [![Code Climate](https://codeclimate.com/github/edbizarro/laravel-facebook-ads/badges/gpa.svg)](https://codeclimate.com/github/edbizarro/laravel-facebook-ads) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1417f30a21a549be812b54d59fdfdf0e)](https://www.codacy.com/app/edbizarro/laravel-facebook-ads?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=edbizarro/laravel-facebook-ads&amp;utm_campaign=Badge_Grade) [![StyleCI](https://styleci.io/repos/55666212/shield)](https://styleci.io/repos/55666212) ![Packagist](https://img.shields.io/packagist/dm/edbizarro/laravel-facebook-ads.svg)
 
 </p>
 
@@ -74,7 +74,7 @@ FB_ADS_APP_SECRET="YOUR_APP_SECRET_KEY"
 
 ## First steps
 
-Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md) with: 
+Before using it, it's necessary to initialize the library with an valid [access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens), [php example](https://github.com/facebook/php-graph-sdk/blob/master/docs/examples/facebook_login.md) with:
 
 ```php
 FacebookAds::init($accessToken);
