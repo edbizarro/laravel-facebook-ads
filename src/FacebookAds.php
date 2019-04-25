@@ -2,6 +2,7 @@
 
 namespace Edbizarro\LaravelFacebookAds;
 
+use Edbizarro\LaravelFacebookAds\Entities\InstagramAccounts;
 use Illuminate\Support\Traits\Macroable;
 use Edbizarro\LaravelFacebookAds\Entities\Campaigns;
 use Edbizarro\LaravelFacebookAds\Entities\AdAccounts;
@@ -13,7 +14,7 @@ class FacebookAds extends AbstractFacebookAds
     /**
      * @param Period $period
      * @param $accountId
-     * @param string $level {ad, adset, campaign, account}
+     * @param string $level [ad, adset, campaign, account]
      * @param array $params
      *
      * @see https://developers.facebook.com/docs/marketing-api/insights
@@ -40,6 +41,14 @@ class FacebookAds extends AbstractFacebookAds
     public function adAccounts(): AdAccounts
     {
         return new AdAccounts;
+    }
+
+    /**
+     * @return InstagramAccounts
+     */
+    public function instagramAccounts(): InstagramAccounts
+    {
+        return new InstagramAccounts;
     }
 
     /**

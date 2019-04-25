@@ -3,13 +3,12 @@
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
 use Illuminate\Support\Collection;
-use Illuminate\Contracts\Support\Arrayable;
 use Edbizarro\LaravelFacebookAds\Traits\AdFormatter;
 
 /**
  * Class AdAccount.
  */
-class AdAccount extends AbstractEntity implements Arrayable
+class AdAccount extends AbstractEntity
 {
     use AdFormatter;
 
@@ -26,7 +25,6 @@ class AdAccount extends AbstractEntity implements Arrayable
     public function ads(array $fields = []): Collection
     {
         $ads = $this->response->getAds($fields);
-
         return $this->format($ads);
     }
 }
