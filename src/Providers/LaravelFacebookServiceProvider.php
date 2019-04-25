@@ -5,6 +5,7 @@ namespace Edbizarro\LaravelFacebookAds\Providers;
 use Illuminate\Support\ServiceProvider;
 use Edbizarro\LaravelFacebookAds\FacebookAds;
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
+use Illuminate\Support\Str;
 
 /**
  * Class LaravelFacebookServiceProvider.
@@ -80,6 +81,6 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     private function isLumen()
     {
-        return true === str_contains($this->app->version(), 'Lumen');
+        return true === Str::contains()($this->app->version(), 'Lumen');
     }
 }
