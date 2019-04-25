@@ -28,24 +28,21 @@ trait Formatter
         if ($this->entity === null) {
             throw new MissingEntityFormatter('To use the FormatterTrait you must provide a entity');
         }
-
-        try {
-            switch (true) {
-                case $response instanceof Cursor:
-                    $data = new Collection;
-                    while ($response->current()) {
-                        $data->push(new $this->entity($response->current()));
-                        $response->next();
-                    }
-                    break;
-                case $response instanceof AbstractObject:
-                    $data = new $this->entity($response);
-                    break;
-            }
-
-            return $data;
-        } catch (Exception $e) {
-            return collect();
+        
+        switch (true) {
+            case $response instanceof Cursor:
+                $data = new Collection;
+                while ($response->current()) {
+                    $data->push(new $this->entity($response->current()));
+                    $response->next();
+                }
+                break;
+            case $response instanceof AbstractObject:
+                $data = new $this->entity($response);
+                break;
         }
+
+        return $data;
+
     }
 }
