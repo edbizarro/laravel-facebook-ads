@@ -2,7 +2,6 @@
 
 namespace Edbizarro\LaravelFacebookAds\Traits;
 
-use Exception;
 use FacebookAds\Cursor;
 use Illuminate\Support\Collection;
 use FacebookAds\Object\AbstractObject;
@@ -23,12 +22,10 @@ trait Formatter
      */
     protected function format($response)
     {
-        $data = null;
-
         if ($this->entity === null) {
             throw new MissingEntityFormatter('To use the FormatterTrait you must provide a entity');
         }
-        
+
         switch (true) {
             case $response instanceof Cursor:
                 $data = new Collection;
@@ -36,13 +33,11 @@ trait Formatter
                     $data->push(new $this->entity($response->current()));
                     $response->next();
                 }
-                break;
+
+                return $data;
+
             case $response instanceof AbstractObject:
-                $data = new $this->entity($response);
-                break;
+                return new $this->entity($response);
         }
-
-        return $data;
-
     }
 }

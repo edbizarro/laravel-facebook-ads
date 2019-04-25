@@ -15,7 +15,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->registerPublishing();
 
@@ -71,7 +71,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['facebook-ads'];
     }
@@ -79,8 +79,8 @@ class LaravelFacebookServiceProvider extends ServiceProvider
     /**
      * @return bool
      */
-    private function isLumen()
+    private function isLumen(): bool
     {
-        return true === Str::contains()($this->app->version(), 'Lumen');
+        return true === Str::contains($this->app->version(), 'Lumen');
     }
 }
