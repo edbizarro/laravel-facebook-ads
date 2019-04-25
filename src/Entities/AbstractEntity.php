@@ -2,6 +2,7 @@
 
 namespace Edbizarro\LaravelFacebookAds\Entities;
 
+use FacebookAds\Object\AbstractObject;
 use Illuminate\Contracts\Support\Arrayable;
 
 /**
@@ -9,7 +10,10 @@ use Illuminate\Contracts\Support\Arrayable;
  */
 abstract class AbstractEntity implements Arrayable
 {
-    protected $response = [];
+    /**
+     * @var AbstractObject|array
+     */
+    protected $response;
 
     public function __construct($class = [])
     {

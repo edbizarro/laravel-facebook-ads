@@ -4,21 +4,21 @@ namespace Edbizarro\LaravelFacebookAds;
 
 use FacebookAds\Api;
 use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
+use Illuminate\Support\Traits\Macroable;
 
 /**
  * Class AbstractFacebookAds.
  */
 abstract class AbstractFacebookAds implements LaravelFacebookAdsContract
 {
+    use Macroable;
+
     /**
      * @var Api
      */
     protected $adsApiInstance;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function init($accessToken)
+    public function init($accessToken): FacebookAds
     {
         Api::init(
             config('facebook-ads.app_id'),

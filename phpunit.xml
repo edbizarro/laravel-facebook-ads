@@ -8,9 +8,7 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="false"
-         verbose="true"
->
+         verbose="true">
     <testsuites>
         <testsuite name="Laravel Facebok Ads Test Suite">
             <directory suffix=".php">./tests</directory>
@@ -22,8 +20,7 @@
         </whitelist>
     </filter>
     <logging>
-        <log type="coverage-html" target="build/coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-html" target="build/coverage"/>
         <log type="coverage-text" target="build/coverage.txt"/>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>
 </phpunit>

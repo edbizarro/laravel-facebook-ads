@@ -19,14 +19,14 @@ class Insights
      * List all campaigns.
      *
      * @param array $fields
-     * @param string $accountId
+     * @param string $accountId *
      *
-     * @return Collection
+     * @return \FacebookAds\Object\AbstractObject|Collection
      *
-     * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account/campaigns
      * @throws \Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter
+     * @see https://developers.facebook.com/docs/marketing-api/reference/ad-account/campaigns
      */
-    public function all(array $fields, string $accountId): Collection
+    public function all(array $fields, string $accountId)
     {
         return $this->format(
             (new AdAccount)->setId($accountId)->getCampaigns($fields)

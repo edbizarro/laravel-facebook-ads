@@ -24,7 +24,8 @@ class AdAccount extends AbstractEntity
      */
     public function ads(array $fields = []): Collection
     {
-        $ads = $this->response->getAds($fields);
-        return $this->format($ads);
+        return $this->format(
+            $this->response->getAds($fields)
+        );
     }
 }

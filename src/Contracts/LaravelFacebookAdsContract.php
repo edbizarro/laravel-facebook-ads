@@ -16,5 +16,5 @@ interface LaravelFacebookAdsContract
      *
      * @return FacebookAds
      */
-    public function init($accessToken);
+    public function init($accessToken): FacebookAds;
 }
