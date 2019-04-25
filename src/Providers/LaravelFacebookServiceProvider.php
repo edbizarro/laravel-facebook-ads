@@ -81,6 +81,6 @@ class LaravelFacebookServiceProvider extends ServiceProvider
      */
     private function isLumen(): bool
     {
-        return true === Str::contains($this->app->version(), 'Lumen');
+        return Str::contains($this->app->version(), 'Lumen');
     }
 }
