@@ -46,16 +46,12 @@ class Insights
         switch ($level) {
             case AdsInsightsLevelValues::AD:
                 return (new Ad)->setId($accountId);
-                break;
             case AdsInsightsLevelValues::CAMPAIGN:
                 return (new Campaign)->setId($accountId);
-                break;
             case AdsInsightsLevelValues::ADSET:
                 return (new AdSet)->setId($accountId);
-                break;
             case AdsInsightsLevelValues::ACCOUNT:
                 return (new AdAccount)->setId($accountId);
-                break;
         }
     }
 }
