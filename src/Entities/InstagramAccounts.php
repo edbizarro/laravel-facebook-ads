@@ -24,10 +24,10 @@ class InstagramAccounts
      * @throws \Edbizarro\LaravelFacebookAds\Exceptions\MissingEntityFormatter
      * @see https://developers.facebook.com/docs/marketing-api/guides/instagramads
      */
-    public function all(array $fields, $accountId): Collection
+    public function all(array $fields, string $accountId): Collection
     {
         return $this->format(
-            (new FbAdAccount($accountId))->getInstagramAccounts($fields)
+            (new FbAdAccount)->setId($accountId)->getInstagramAccounts($fields)
         );
     }
 
