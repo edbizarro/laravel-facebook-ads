@@ -2,17 +2,17 @@
 
 namespace Edbizarro\LaravelFacebookAds\Traits;
 
-use FacebookAds\Object\AdAccountUser;
+use FacebookAds\Object\User;
 
 trait HasAccountUser
 {
     /**
      * @param string|int $accountUserId
      *
-     * @return AdAccountUser
+     * @return User
      */
-    protected function accountUser($accountUserId = 'me'): AdAccountUser
+    protected function accountUser($accountUserId = 'me'): User
     {
-        return (new AdAccountUser)->setId($accountUserId);
+        return (new User)->setId($accountUserId);
     }
 }
