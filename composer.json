@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=7.1.13",
-        "facebook/php-business-sdk": "^3.2"
+        "facebook/php-business-sdk": "^3.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.13",
