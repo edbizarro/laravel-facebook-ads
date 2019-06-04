@@ -44,7 +44,7 @@ class AdAccounts
     public function get(array $fields, $accountId)
     {
         return $this->format(
-            (new AdAccount($accountId))->read($fields)
+            (new AdAccount($accountId))->getSelf($fields)
         );
     }
 }
