@@ -43,7 +43,7 @@ class InstagramAccounts
     public function get(array $fields, $accountId)
     {
         return $this->format(
-            (new FbAdAccount($accountId))->read($fields)
+            (new FbAdAccount($accountId))->getSelf($fields)
         );
     }
 }
