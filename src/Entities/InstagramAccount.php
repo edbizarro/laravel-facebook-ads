@@ -25,6 +25,7 @@ class InstagramAccount extends AbstractEntity
     public function ads(array $fields = []): Collection
     {
         $ads = $this->response->getAds($fields);
+
         return $this->format($ads);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Edbizarro\LaravelFacebookAds\Providers;
 
-use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
-use Edbizarro\LaravelFacebookAds\FacebookAds;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
+use Illuminate\Support\ServiceProvider;
+use Edbizarro\LaravelFacebookAds\FacebookAds;
+use Edbizarro\LaravelFacebookAds\Contracts\LaravelFacebookAdsContract;
 
 /**
  * Class LaravelFacebookServiceProvider.
@@ -30,7 +30,7 @@ class LaravelFacebookServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/facebook-ads.php',
+            __DIR__.'/../../config/facebook-ads.php',
             'facebook-ads'
         );
 
@@ -47,13 +47,13 @@ class LaravelFacebookServiceProvider extends ServiceProvider
     {
         if ($this->isLumen() === false) {
             $this->publishes([
-                __DIR__ . '/../../config/facebook-ads.php' => config_path('facebook-ads.php'),
+                __DIR__.'/../../config/facebook-ads.php' => config_path('facebook-ads.php'),
             ], 'facebook-ads');
         }
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../../config/facebook-ads.php' => config_path('facebook-ads.php'),
+                __DIR__.'/../../config/facebook-ads.php' => config_path('facebook-ads.php'),
             ], 'facebook-ads');
         }
     }
